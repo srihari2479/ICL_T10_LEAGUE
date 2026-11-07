@@ -82,7 +82,7 @@ const MainContent: React.FC = () => {
 export function App() {
   return (
     <AppProvider>
-      <div className="min-h-screen flex flex-col bg-[var(--kreeda-bg)] text-[var(--kreeda-text-primary)] font-sans selection:bg-[#FF5500] selection:text-white overflow-x-hidden min-w-[300px] transition-colors duration-200">
+      <div className="min-h-screen flex flex-col w-full max-w-full bg-[var(--kreeda-bg)] text-[var(--kreeda-text-primary)] font-sans selection:bg-[#FF5500] selection:text-white overflow-x-hidden transition-colors duration-200">
         <Navbar />
         <MainContent />
         <Footer />

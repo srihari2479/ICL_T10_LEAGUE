@@ -25,35 +25,35 @@ export const GatewaysBanner: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Card 1: Player Registration & Trials with Dynamic 3D Equipment Showcase */}
-          <div className="glass-card p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between group border border-black/10 dark:border-white/10 hover:border-[#FF5500]/50 transition-all duration-300 shadow-sm dark:shadow-tactile rounded-3xl">
+          <div className="glass-card p-4 sm:p-8 relative overflow-hidden flex flex-col justify-between group border border-black/10 dark:border-white/10 hover:border-[#FF5500]/50 transition-all duration-300 shadow-sm dark:shadow-tactile rounded-3xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#FF5500]/15 via-[#F59E0B]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
             <div className="space-y-4 relative z-10">
               
               {/* Header with Floating 3D Equipment Asset */}
-              <div className="flex items-start justify-between gap-4">
-                <div className="space-y-2.5 flex-1">
+              <div className="flex items-start justify-between gap-3 sm:gap-4">
+                <div className="space-y-2 flex-1 min-w-0">
                   <div className="inline-flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-lg bg-[#FF5500]/15 border border-[#FF5500]/30 flex items-center justify-center text-[#FF5500] shadow-sm">
-                      <UserPlus className="w-4 h-4" />
+                    <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#FF5500]/15 border border-[#FF5500]/30 flex items-center justify-center text-[#FF5500] shadow-sm flex-shrink-0">
+                      <UserPlus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF5500] bg-[#FF5500]/15 px-2.5 py-1 rounded-full">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF5500] bg-[#FF5500]/15 px-2.5 py-0.5 sm:py-1 rounded-full truncate">
                       Grassroots to Floodlights
                     </span>
                   </div>
                   
-                  <h3 className="text-2xl sm:text-3xl font-bebas text-[var(--kreeda-text-primary)] tracking-wide leading-tight">
+                  <h3 className="text-xl sm:text-3xl font-bebas text-[var(--kreeda-text-primary)] tracking-wide leading-tight">
                     PLAYER REGISTRATION &amp; OPEN TRIALS
                   </h3>
                 </div>
 
                 {/* Large 3D Photorealistic Cricket Gear Hero Asset */}
-                <div className="flex-shrink-0 -mt-2 -mr-1 relative">
+                <div className="flex-shrink-0 -mt-1 sm:-mt-2 -mr-1 relative">
                   <div className="absolute inset-0 bg-[#FF5500]/20 rounded-full blur-xl pointer-events-none scale-90" />
                   <img 
                     src={getAssetUrl('assets/player_trials_3d.png')} 
                     alt="Official Player Cricket Equipment" 
-                    className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain filter drop-shadow-[0_12px_24px_rgba(255,85,0,0.3)] group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300 relative z-10" 
+                    className="w-20 h-20 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain filter drop-shadow-[0_12px_24px_rgba(255,85,0,0.3)] group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300 relative z-10" 
                   />
                 </div>
               </div>
@@ -92,35 +92,35 @@ export const GatewaysBanner: React.FC = () => {
           </div>
 
           {/* Card 2: Creator / Influencer Portal with Dynamic 3D Media Kit Showcase */}
-          <div className="glass-card p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between group border border-black/10 dark:border-white/10 hover:border-[#F59E0B]/50 transition-all duration-300 shadow-sm dark:shadow-tactile rounded-3xl">
+          <div className="glass-card p-4 sm:p-8 relative overflow-hidden flex flex-col justify-between group border border-black/10 dark:border-white/10 hover:border-[#F59E0B]/50 transition-all duration-300 shadow-sm dark:shadow-tactile rounded-3xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#F59E0B]/15 via-[#FF5500]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
             <div className="space-y-4 relative z-10">
               
               {/* Header with Floating 3D Media Gear Asset */}
-              <div className="flex items-start justify-between gap-4">
-                <div className="space-y-2.5 flex-1">
+              <div className="flex items-start justify-between gap-3 sm:gap-4">
+                <div className="space-y-2 flex-1 min-w-0">
                   <div className="inline-flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-lg bg-[#F59E0B]/15 border border-[#F59E0B]/30 flex items-center justify-center text-[#F59E0B] shadow-sm">
-                      <Flame className="w-4 h-4" />
+                    <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#F59E0B]/15 border border-[#F59E0B]/30 flex items-center justify-center text-[#F59E0B] shadow-sm flex-shrink-0">
+                      <Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#0A1128] bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] px-2.5 py-1 rounded-full font-black">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#0A1128] bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] px-2.5 py-0.5 sm:py-1 rounded-full font-black truncate">
                       Digital Content Creators
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bebas text-[var(--kreeda-text-primary)] tracking-wide leading-tight">
+                  <h3 className="text-xl sm:text-3xl font-bebas text-[var(--kreeda-text-primary)] tracking-wide leading-tight">
                     INFLUENCER &amp; CREATOR PORTAL
                   </h3>
                 </div>
 
                 {/* Large 3D Photorealistic VIP Media Rig Hero Asset */}
-                <div className="flex-shrink-0 -mt-2 -mr-1 relative">
+                <div className="flex-shrink-0 -mt-1 sm:-mt-2 -mr-1 relative">
                   <div className="absolute inset-0 bg-[#F59E0B]/20 rounded-full blur-xl pointer-events-none scale-90" />
                   <img 
                     src={getAssetUrl('assets/creator_vip_3d.png')} 
                     alt="Official VIP Media Creator Equipment" 
-                    className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain filter drop-shadow-[0_12px_24px_rgba(245,158,11,0.3)] group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300 relative z-10" 
+                    className="w-20 h-20 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain filter drop-shadow-[0_12px_24px_rgba(245,158,11,0.3)] group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300 relative z-10" 
                   />
                 </div>
               </div>

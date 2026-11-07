@@ -25,7 +25,7 @@ export const FranchiseDetailModal: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto">
-      <div className="bg-[var(--kreeda-surface)] border-2 border-black/10 dark:border-white/15 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative my-auto max-h-[92vh] overflow-y-auto">
+      <div className="bg-[var(--kreeda-surface)] border-2 border-black/10 dark:border-white/15 rounded-3xl max-w-3xl w-full p-4 sm:p-8 shadow-2xl relative my-auto max-h-[92vh] overflow-y-auto">
         
         {/* Close Button */}
         <button
@@ -132,34 +132,34 @@ export const FranchiseDetailModal: React.FC = () => {
               {selectedFranchise.squad.map((player) => (
                 <div
                   key={player.id}
-                  className="p-3.5 rounded-2xl bg-black/[0.02] dark:bg-white/[0.03] hover:bg-black/[0.05] dark:hover:bg-white/[0.06] border border-black/5 dark:border-white/5 flex items-center justify-between gap-3 transition"
+                  className="p-3 sm:p-3.5 rounded-2xl bg-black/[0.02] dark:bg-white/[0.03] hover:bg-black/[0.05] dark:hover:bg-white/[0.06] border border-black/5 dark:border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 transition"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-xl bg-[#FF5500]/15 border border-[#FF5500]/30 flex items-center justify-center font-bebas text-base text-[#FF5500]">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="w-8 h-8 rounded-xl bg-[#FF5500]/15 border border-[#FF5500]/30 flex items-center justify-center font-bebas text-base text-[#FF5500] flex-shrink-0">
                       #{player.jerseyNumber}
                     </span>
-                    <div>
-                      <div className="font-bold text-[var(--kreeda-text-primary)] text-sm flex items-center gap-2">
+                    <div className="min-w-0 flex-1">
+                      <div className="font-bold text-[var(--kreeda-text-primary)] text-sm flex flex-wrap items-center gap-1.5 sm:gap-2">
                         <span>{player.name}</span>
                         {player.isCaptain && (
-                          <span className="px-2 py-0.5 rounded-full bg-[#FF5500]/20 text-[#FF5500] text-[10px] font-black tracking-widest uppercase">
+                          <span className="px-1.5 py-0.5 rounded-full bg-[#FF5500]/20 text-[#FF5500] text-[9.5px] font-black tracking-widest uppercase">
                             CAPTAIN
                           </span>
                         )}
                         {player.isViceCaptain && (
-                          <span className="px-2 py-0.5 rounded-full bg-[#F59E0B]/20 text-[#F59E0B] text-[10px] font-black tracking-widest uppercase">
+                          <span className="px-1.5 py-0.5 rounded-full bg-[#F59E0B]/20 text-[#F59E0B] text-[9.5px] font-black tracking-widest uppercase">
                             VICE CAPTAIN
                           </span>
                         )}
                       </div>
-                      <div className="text-xs text-[var(--kreeda-text-muted)] mt-0.5">
+                      <div className="text-xs text-[var(--kreeda-text-muted)] mt-0.5 truncate">
                         {player.role} • {player.battingStyle}
                         {player.bowlingStyle ? ` • ${player.bowlingStyle}` : ''}
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-right text-xs flex-shrink-0">
+                  <div className="text-left sm:text-right text-xs pl-11 sm:pl-0 flex-shrink-0">
                     <span className="text-[var(--kreeda-text-muted)]">Home: </span>
                     <span className="text-[var(--kreeda-text-primary)] font-bold">{player.homeDistrict}</span>
                   </div>

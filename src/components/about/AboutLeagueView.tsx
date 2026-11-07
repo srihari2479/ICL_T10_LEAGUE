@@ -117,7 +117,7 @@ export const AboutLeagueView: React.FC = () => {
       </div>
 
       {/* Kreeda App Technical Boundary Card */}
-      <div className="glass-card p-8 border-2 border-black/10 dark:border-white/10 space-y-4 shadow-xl">
+      <div className="glass-card p-5 sm:p-8 rounded-3xl border-2 border-black/10 dark:border-white/10 space-y-4 shadow-xl">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
           <div className="space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#FF5500]">
@@ -133,7 +133,7 @@ export const AboutLeagueView: React.FC = () => {
 
           <button
             onClick={() => openKreedaBoundaryModal()}
-            className="py-2.5 sm:py-3 px-5 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 transition self-start sm:self-auto flex-shrink-0 shadow-orange-glow btn-tactile"
+            className="w-full sm:w-auto py-2.5 sm:py-3 px-5 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition flex-shrink-0 shadow-orange-glow btn-tactile"
           >
             <span>Read Architecture Boundary</span>
             <ExternalLink className="w-4 h-4 text-white" />
@@ -142,17 +142,17 @@ export const AboutLeagueView: React.FC = () => {
       </div>
 
       {/* Quick Action Footer */}
-      <div className="pt-2 flex flex-wrap items-center gap-4">
+      <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
         <button
           onClick={() => setCurrentPage('register-player')}
-          className="py-3.5 px-7 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-lg tracking-wider uppercase font-black transition shadow-orange-glow btn-tactile"
+          className="w-full sm:w-auto py-3.5 px-7 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-lg tracking-wider uppercase font-black transition shadow-orange-glow btn-tactile text-center"
         >
           Enroll for Player Trials
         </button>
 
         <button
           onClick={() => setCurrentPage('zones')}
-          className="py-3.5 px-6 rounded-2xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-[var(--kreeda-text-primary)] font-bold text-sm border border-black/10 dark:border-white/10 transition btn-tactile"
+          className="w-full sm:w-auto py-3.5 px-6 rounded-2xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-[var(--kreeda-text-primary)] font-bold text-sm border border-black/10 dark:border-white/10 transition btn-tactile text-center"
         >
           Explore Catchment Map
         </button>

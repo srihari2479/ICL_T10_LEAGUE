@@ -334,7 +334,7 @@ export const TicketBookingWizard: React.FC = () => {
           </div>
 
           {/* Step 3: Quantity Selector */}
-          <div className="glass-card p-4 sm:p-5 flex items-center justify-between border border-black/10 dark:border-white/10 shadow-sm dark:shadow-tactile">
+          <div className="glass-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-black/10 dark:border-white/10 shadow-sm dark:shadow-tactile">
             <div>
               <div className="font-bebas text-base sm:text-lg text-[var(--kreeda-text-primary)] tracking-wider uppercase">
                 3. Number of Tickets
@@ -342,13 +342,13 @@ export const TicketBookingWizard: React.FC = () => {
               <div className="text-[11px] text-[var(--kreeda-text-muted)]">Max 6 tickets per transaction</div>
             </div>
 
-            <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="flex items-center justify-between sm:justify-start gap-1.5 sm:gap-2 w-full sm:w-auto">
               {[1, 2, 3, 4, 5, 6].map((num) => (
                 <button
                   key={num}
                   type="button"
                   onClick={() => setQuantity(num)}
-                  className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl font-bold text-sm transition border btn-tactile ${
+                  className={`flex-1 sm:flex-none w-auto sm:w-10 h-10 rounded-xl font-bold text-sm transition border btn-tactile ${
                     quantity === num
                       ? 'bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white border-transparent shadow-orange-glow font-black'
                       : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] hover:bg-black/10'

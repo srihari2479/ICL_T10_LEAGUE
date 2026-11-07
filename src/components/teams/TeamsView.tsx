@@ -66,33 +66,33 @@ export const TeamsView: React.FC = () => {
 
               <div className="space-y-3.5">
                 {/* Team Top Row */}
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-black/10 dark:border-white/10 shadow-lg bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-black/10 dark:border-white/10 shadow-lg bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
                       {team.crestImage ? (
-                        <img src={team.crestImage} alt={team.name} className="w-13 h-13 sm:w-16 sm:h-16 object-cover" />
+                        <img src={team.crestImage} alt={team.name} className="w-full h-full object-cover" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center font-bebas text-xl font-bold text-[var(--kreeda-text-primary)]">
                           {team.shortCode}
                         </div>
                       )}
                     </div>
-                    <div>
-                      <span className="text-[11px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)]">
+                    <div className="min-w-0 flex-1">
+                      <span className="text-[10.5px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)]">
                         {team.state}
                       </span>
-                      <h2 className="font-bebas text-xl sm:text-2xl text-[var(--kreeda-text-primary)] mt-1 leading-tight">
+                      <h2 className="font-bebas text-xl sm:text-2xl text-[var(--kreeda-text-primary)] mt-1 leading-tight truncate">
                         {team.name}
                       </h2>
-                      <div className="text-xs text-[#FF5500] italic font-semibold mt-0.5">
+                      <div className="text-xs text-[#FF5500] italic font-semibold mt-0.5 truncate">
                         "{team.tagline}"
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-right">
-                    <span className="text-[11px] text-[var(--kreeda-text-muted)] block font-medium">Regional Hub</span>
-                    <span className="text-xs sm:text-sm font-bold text-[#F59E0B] flex items-center justify-end gap-1 mt-0.5">
+                  <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start pt-1 sm:pt-0 border-t sm:border-t-0 border-black/10 dark:border-white/10 flex-shrink-0">
+                    <span className="text-[11px] text-[var(--kreeda-text-muted)] font-medium">Regional Hub</span>
+                    <span className="text-xs sm:text-sm font-bold text-[#F59E0B] flex items-center gap-1 mt-0.5">
                       <MapPin className="w-3.5 h-3.5 text-[#FF5500]" />
                       {team.hub}
                     </span>

@@ -47,7 +47,7 @@ export const UpcomingFixturesStrip: React.FC = () => {
             return (
               <div
                 key={match.id}
-                className={`glass-card p-5 sm:p-6 flex flex-col justify-between border-2 transition-all duration-300 shadow-sm dark:shadow-tactile ${
+                className={`glass-card p-4 sm:p-6 rounded-3xl flex flex-col justify-between border-2 transition-all duration-300 shadow-sm dark:shadow-tactile ${
                   isLive 
                     ? 'border-rose-500/50 bg-rose-500/5 dark:bg-rose-950/20 shadow-md' 
                     : 'border-black/10 dark:border-white/10 hover:border-[#FF5500]/40'
@@ -73,12 +73,79 @@ export const UpcomingFixturesStrip: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Teams Row (Symmetric Pro Scoreboard Layout) */}
-                  <div className="py-2 grid grid-cols-12 items-center gap-2">
-                    
+                  {/* Mobile Match Scoreboard Layout (< sm) */}
+                  <div className="sm:hidden space-y-2.5 py-1">
                     {/* Team 1 */}
-                    <div className="col-span-4 sm:col-span-5 flex items-center gap-2.5 min-w-0">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                        <div className="w-9 h-9 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
+                          {team1?.crestImage ? (
+                            <img src={team1.crestImage} alt={team1.name} className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center font-bebas text-sm font-bold text-[var(--kreeda-text-primary)]">
+                              {team1?.shortCode}
+                            </div>
+                          )}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="font-bold text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-tight">
+                            {team1?.name}
+                          </div>
+                          <div className="text-[10px] text-[var(--kreeda-text-muted)] truncate">
+                            {team1?.hub}
+                          </div>
+                        </div>
+                      </div>
+                      {isLive && match.team1Score && (
+                        <div className="text-right flex-shrink-0 font-bebas text-base text-[#FF5500]">
+                          {match.team1Score}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Divider */}
+                    <div className="flex items-center gap-2 text-xs text-[var(--kreeda-text-muted)]">
+                      <div className="flex-1 h-px bg-black/10 dark:bg-white/10" />
+                      <span className="font-black text-[9px] text-[#FF5500] uppercase tracking-widest px-1">
+                        {isLive ? 'VS' : 'MATCHUP'}
+                      </span>
+                      <div className="flex-1 h-px bg-black/10 dark:bg-white/10" />
+                    </div>
+
+                    {/* Team 2 */}
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                        <div className="w-9 h-9 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
+                          {team2?.crestImage ? (
+                            <img src={team2.crestImage} alt={team2.name} className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center font-bebas text-sm font-bold text-[var(--kreeda-text-primary)]">
+                              {team2?.shortCode}
+                            </div>
+                          )}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="font-bold text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-tight">
+                            {team2?.name}
+                          </div>
+                          <div className="text-[10px] text-[var(--kreeda-text-muted)] truncate">
+                            {team2?.hub}
+                          </div>
+                        </div>
+                      </div>
+                      {isLive && match.team2Score && (
+                        <div className="text-right flex-shrink-0 font-bebas text-base text-[#F59E0B]">
+                          {match.team2Score}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Desktop Scoreboard Layout (>= sm) */}
+                  <div className="hidden sm:flex items-center justify-between gap-3 py-2.5">
+                    {/* Team 1 */}
+                    <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                      <div className="w-12 h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
                         {team1?.crestImage ? (
                           <img src={team1.crestImage} alt={team1.name} className="w-full h-full object-cover" />
                         ) : (
@@ -87,21 +154,21 @@ export const UpcomingFixturesStrip: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      <div className="min-w-0">
-                        <div className="font-bold text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-snug line-clamp-1">
+                      <div className="min-w-0 flex-1">
+                        <div className="font-bold text-sm text-[var(--kreeda-text-primary)] leading-snug line-clamp-1">
                           {team1?.name}
                         </div>
-                        <div className="text-[11px] text-[var(--kreeda-text-muted)] truncate">
+                        <div className="text-[11px] text-[var(--kreeda-text-muted)] truncate mt-0.5">
                           {team1?.hub}
                         </div>
                       </div>
                     </div>
 
                     {/* Center Score / VS Indicator */}
-                    <div className="col-span-4 sm:col-span-2 text-center flex flex-col items-center justify-center">
+                    <div className="flex-shrink-0 px-2 text-center flex flex-col items-center justify-center">
                       {isLive && match.team1Score && match.team2Score ? (
                         <div className="space-y-0.5">
-                          <div className="font-bebas text-base sm:text-xl tracking-wider text-[#FF5500] leading-none whitespace-nowrap">
+                          <div className="font-bebas text-xl tracking-wider text-[#FF5500] leading-none whitespace-nowrap">
                             {match.team1Score.split(' ')[0]} <span className="text-[var(--kreeda-text-muted)] text-xs font-sans font-normal">vs</span> {match.team2Score.split(' ')[0]}
                           </div>
                           <div className="text-[10px] text-[var(--kreeda-text-muted)] font-mono">
@@ -109,23 +176,23 @@ export const UpcomingFixturesStrip: React.FC = () => {
                           </div>
                         </div>
                       ) : (
-                        <span className="w-7 h-7 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center text-[10px] font-black text-[#FF5500] shadow-sm">
+                        <span className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center text-[10px] font-black text-[#FF5500] shadow-sm">
                           VS
                         </span>
                       )}
                     </div>
 
                     {/* Team 2 */}
-                    <div className="col-span-4 sm:col-span-5 flex items-center justify-end gap-2.5 min-w-0 text-right">
-                      <div className="min-w-0">
-                        <div className="font-bold text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-snug line-clamp-1">
+                    <div className="flex items-center justify-end gap-2.5 min-w-0 flex-1 text-right">
+                      <div className="min-w-0 flex-1">
+                        <div className="font-bold text-sm text-[var(--kreeda-text-primary)] leading-snug line-clamp-1">
                           {team2?.name}
                         </div>
-                        <div className="text-[11px] text-[var(--kreeda-text-muted)] truncate">
+                        <div className="text-[11px] text-[var(--kreeda-text-muted)] truncate mt-0.5">
                           {team2?.hub}
                         </div>
                       </div>
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
+                      <div className="w-12 h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
                         {team2?.crestImage ? (
                           <img src={team2.crestImage} alt={team2.name} className="w-full h-full object-cover" />
                         ) : (
@@ -145,7 +212,7 @@ export const UpcomingFixturesStrip: React.FC = () => {
                   )}
 
                   {/* Venue Details */}
-                  <div className="text-xs text-[var(--kreeda-text-muted)] text-center truncate">
+                  <div className="text-[11px] sm:text-xs text-[var(--kreeda-text-muted)] text-center line-clamp-2 sm:line-clamp-1 leading-snug">
                     {match.venue}, {match.city}
                   </div>
                 </div>

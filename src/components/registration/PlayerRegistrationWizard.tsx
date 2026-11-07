@@ -283,22 +283,24 @@ export const PlayerRegistrationWizard: React.FC = () => {
                 <label className="block text-sm font-bold text-[var(--kreeda-text-primary)] mb-2">
                   Mobile Number (10 Digits) *
                 </label>
-                <div className="flex gap-2.5">
-                  <div className="flex items-center px-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-sm font-bold text-[var(--kreeda-text-secondary)]">
-                    +91
+                <div className="flex flex-col sm:flex-row gap-2.5">
+                  <div className="flex gap-2 flex-1 min-w-0">
+                    <div className="flex items-center px-3.5 sm:px-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-sm font-bold text-[var(--kreeda-text-secondary)] flex-shrink-0">
+                      +91
+                    </div>
+                    <input
+                      type="tel"
+                      maxLength={10}
+                      value={mobile}
+                      onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
+                      placeholder="98490 12345"
+                      className="w-full min-w-0 px-4 py-3 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm sm:text-base focus:outline-none focus:border-[#FF5500]"
+                    />
                   </div>
-                  <input
-                    type="tel"
-                    maxLength={10}
-                    value={mobile}
-                    onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
-                    placeholder="98490 12345"
-                    className="flex-1 px-4 py-3 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm sm:text-base focus:outline-none focus:border-[#FF5500]"
-                  />
                   <button
                     type="button"
                     onClick={handleSendOtp}
-                    className="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] text-[#070B14] font-bebas text-base uppercase tracking-wider font-black transition btn-tactile shadow-orange-glow"
+                    className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] text-[#070B14] font-bebas text-base uppercase tracking-wider font-black transition btn-tactile shadow-orange-glow whitespace-nowrap"
                   >
                     {otpSent ? 'Resend' : 'Send OTP'}
                   </button>
