@@ -57,7 +57,7 @@ export const SponsorsStrip: React.FC = () => {
       case 'Broadcast Partner':
         return {
           icon: <Tv className="w-3.5 h-3.5 text-red-500" />,
-          label: 'BROADCAST PARTNER',
+          label: 'BROADCAST',
           pillClass: 'bg-red-500/15 text-red-600 dark:text-red-300 border-red-500/35',
           borderClass: 'border-red-500/30 hover:border-red-400 dark:hover:border-red-400/80',
           glowClass: 'shadow-[0_0_20px_rgba(239,68,68,0.12)]',
@@ -67,7 +67,7 @@ export const SponsorsStrip: React.FC = () => {
       case 'Kit Partner':
         return {
           icon: <ShieldCheck className="w-3.5 h-3.5 text-blue-500" />,
-          label: 'KIT PARTNER',
+          label: 'OFFICIAL KIT',
           pillClass: 'bg-blue-500/15 text-blue-600 dark:text-blue-300 border-blue-500/35',
           borderClass: 'border-blue-500/30 hover:border-blue-400 dark:hover:border-blue-400/80',
           glowClass: 'shadow-[0_0_20px_rgba(59,130,246,0.12)]',
@@ -77,7 +77,7 @@ export const SponsorsStrip: React.FC = () => {
       default:
         return {
           icon: <HeartPulse className="w-3.5 h-3.5 text-amber-500" />,
-          label: 'HEALTHCARE PARTNER',
+          label: 'HEALTHCARE',
           pillClass: 'bg-amber-500/15 text-amber-600 dark:text-amber-300 border-amber-500/35',
           borderClass: 'border-amber-500/30 hover:border-amber-400 dark:hover:border-amber-400/80',
           glowClass: 'shadow-[0_0_20px_rgba(217,119,6,0.12)]',
@@ -278,7 +278,7 @@ export const SponsorsStrip: React.FC = () => {
 
                 {/* Partner Details */}
                 <div className="w-full text-center space-y-0.5">
-                  <div className="text-xs sm:text-[13px] font-bold text-[var(--kreeda-text-primary)] leading-tight truncate group-hover:text-[#FF5500] transition-colors">
+                  <div className="text-[11px] sm:text-[11.5px] xl:text-[12px] font-bold text-[var(--kreeda-text-primary)] leading-tight tracking-tight truncate group-hover:text-[#FF5500] transition-colors">
                     {partner.name}
                   </div>
                   <div className="text-[10px] sm:text-[10.5px] text-[var(--kreeda-text-muted)] font-medium truncate">
