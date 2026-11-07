@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="ballGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#991B1B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Emblem Shield -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Shield Glow -->
+    <path d="M30 0 L56 12 L56 36 C56 50 30 62 30 62 C30 62 4 50 4 36 L4 12 Z" fill="url(#tealGrad)" opacity="0.3" filter="blur(3px)" />
+    <!-- Main Crest -->
+    <path d="M30 2 L54 13 L54 35 C54 48 30 59 30 59 C30 59 6 48 6 35 L6 13 Z" fill="#0E1726" stroke="url(#shieldGrad)" stroke-width="2.5" />
+    
+    <!-- Cricket Ball with Seam -->
+    <circle cx="30" cy="28" r="14" fill="url(#ballGrad)" />
+    <path d="M22 28 C26 21 34 21 38 28 C34 35 26 35 22 28 Z" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="2 1" />
+    <circle cx="30" cy="28" r="3" fill="#FFFFFF" opacity="0.9" />
+
+    <!-- Lightning Spark Accent -->
+    <path d="M29 6 L33 16 L28 17 L32 25 L23 18 L27 17 Z" fill="#FDE68A" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(75, 18)">
+    <!-- "ICL" text -->
+    <text x="0" y="32" font-family="'Cabinet Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="1">
+      ICL
+    </text>
+    <!-- "T10" Badge -->
+    <rect x="76" y="8" width="56" height="26" rx="5" fill="url(#shieldGrad)" />
+    <text x="83" y="27" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="18" fill="#070B14" letter-spacing="1">
+      T10
+    </text>
+    <!-- Subtitle -->
+    <text x="2" y="48" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="10.5" fill="#06B6D4" letter-spacing="3.2">
+      TELUGU CRICKET LEAGUE
+    </text>
+  </g>
+</svg>
