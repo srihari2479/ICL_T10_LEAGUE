@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { FRANCHISES_DATA } from '../../data/franchisesData';
 import { Shield, ExternalLink, Mail, MapPin } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetHelper';
 
 export const Footer: React.FC = () => {
   const { setCurrentPage, setSelectedFranchise, openKreedaBoundaryModal } = useApp();
@@ -45,7 +46,7 @@ export const Footer: React.FC = () => {
         <div className="lg:col-span-2 space-y-4">
           <Link to="/" className="inline-block group focus:outline-none">
             <img 
-              src="/assets/icl_logo.png" 
+              src={getAssetUrl('assets/icl_logo.png')} 
               alt="ICL T10 Official League Logo" 
               className="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
             />

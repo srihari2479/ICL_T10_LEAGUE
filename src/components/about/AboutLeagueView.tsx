@@ -1,5 +1,6 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
+import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Trophy, 
   ShieldCheck, 
@@ -46,7 +47,7 @@ export const AboutLeagueView: React.FC = () => {
         <div className="lg:col-span-4 flex justify-center">
           <div className="w-64 h-64 rounded-3xl overflow-hidden border-2 border-black/10 dark:border-white/15 shadow-sm dark:shadow-orange-glow bg-[var(--kreeda-surface-elevated)] p-4 flex items-center justify-center relative group">
             <img 
-              src="/assets/trophy.png?v=4" 
+              src={getAssetUrl('assets/trophy.png?v=4')} 
               alt="ICL T10 Official Championship Silverware" 
               className="h-full object-contain filter drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
             />

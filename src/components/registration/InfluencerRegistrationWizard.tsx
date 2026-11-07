@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { InfluencerApplication, StateType } from '../../types';
 import confetti from 'canvas-confetti';
+import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Flame, 
   CheckCircle2, 
@@ -148,7 +149,7 @@ export const InfluencerRegistrationWizard: React.FC = () => {
 
           {/* Kreeda VIP Pass Badge Thumbnail */}
           <div className="w-16 h-16 rounded-2xl overflow-hidden border border-[#F59E0B]/40 shadow-sm flex-shrink-0 hidden sm:block">
-            <img src="/assets/kreeda/kreeda_vip_pass_badge.jpg" alt="VIP Pass" className="w-full h-full object-cover" />
+            <img src={getAssetUrl('assets/kreeda/kreeda_vip_pass_badge.jpg')} alt="VIP Pass" className="w-full h-full object-cover" />
           </div>
         </div>
 

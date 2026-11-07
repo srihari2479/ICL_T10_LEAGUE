@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
+import { getAssetUrl } from '../../utils/assetHelper';
 
 export const StadiumHeroScenery: React.FC = () => {
   const { theme } = useApp();
@@ -24,12 +25,12 @@ export const StadiumHeroScenery: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          poster="/assets/cricket_stadium_broadcast.jpg"
+          poster={getAssetUrl('assets/cricket_stadium_broadcast.jpg')}
           className="w-full h-full object-cover object-center transition-all duration-700 ease-out opacity-90 brightness-[1.0] contrast-[1.05] saturate-[1.12]"
         >
-          <source src="/assets/stadium_ambient_loop.mp4" type="video/mp4" />
+          <source src={getAssetUrl('assets/stadium_ambient_loop.mp4')} type="video/mp4" />
           <img
-            src="/assets/cricket_stadium_broadcast.jpg"
+            src={getAssetUrl('assets/cricket_stadium_broadcast.jpg')}
             alt="ICL Stadium Scenery"
             className="w-full h-full object-cover object-center"
           />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { UserPlus, Flame, CheckCircle, ArrowRight, ShieldAlert, Award, Sparkles } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetHelper';
 
 export const GatewaysBanner: React.FC = () => {
   const { setCurrentPage } = useApp();
@@ -50,7 +51,7 @@ export const GatewaysBanner: React.FC = () => {
                 <div className="flex-shrink-0 -mt-2 -mr-1 relative">
                   <div className="absolute inset-0 bg-[#FF5500]/20 rounded-full blur-xl pointer-events-none scale-90" />
                   <img 
-                    src="/assets/player_trials_3d.png" 
+                    src={getAssetUrl('assets/player_trials_3d.png')} 
                     alt="Official Player Cricket Equipment" 
                     className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain filter drop-shadow-[0_12px_24px_rgba(255,85,0,0.3)] group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300 relative z-10" 
                   />
@@ -117,7 +118,7 @@ export const GatewaysBanner: React.FC = () => {
                 <div className="flex-shrink-0 -mt-2 -mr-1 relative">
                   <div className="absolute inset-0 bg-[#F59E0B]/20 rounded-full blur-xl pointer-events-none scale-90" />
                   <img 
-                    src="/assets/creator_vip_3d.png" 
+                    src={getAssetUrl('assets/creator_vip_3d.png')} 
                     alt="Official VIP Media Creator Equipment" 
                     className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain filter drop-shadow-[0_12px_24px_rgba(245,158,11,0.3)] group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300 relative z-10" 
                   />

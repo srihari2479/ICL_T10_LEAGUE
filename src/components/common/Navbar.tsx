@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp, NavigationPage } from '../../context/AppContext';
+import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Menu, 
   X, 
@@ -100,7 +101,7 @@ export const Navbar: React.FC = () => {
             aria-label="ICL T10 Home"
           >
             <img 
-              src="/assets/icl_logo.png" 
+              src={getAssetUrl('assets/icl_logo.png')} 
               alt="ICL T10 Official League" 
               className="h-9 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
             />

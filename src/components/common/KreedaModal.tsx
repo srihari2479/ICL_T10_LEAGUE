@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { X, ExternalLink, ShieldCheck, Activity, Award, CheckCircle2 } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetHelper';
 
 export const KreedaModal: React.FC = () => {
   const { isKreedaModalOpen, setIsKreedaModalOpen, kreedaModalContext } = useApp();
@@ -18,7 +19,7 @@ export const KreedaModal: React.FC = () => {
         <div className="flex items-start justify-between gap-4 pb-4 border-b border-black/10 dark:border-white/10">
           <div className="flex items-center gap-3">
             <div className="h-12 w-auto bg-black/5 dark:bg-white/10 p-2 rounded-2xl border border-black/10 dark:border-white/10 flex items-center justify-center">
-              <img src="/assets/kreeda/kreeda.png" alt="Kreeda App" className="h-7 object-contain" />
+              <img src={getAssetUrl('assets/kreeda/kreeda.png')} alt="Kreeda App" className="h-7 object-contain" />
             </div>
             <div>
               <h3 className="font-bebas text-2xl text-[var(--kreeda-text-primary)] tracking-wide">

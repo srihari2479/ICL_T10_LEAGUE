@@ -3,6 +3,7 @@ import { useApp } from '../../context/AppContext';
 import { FRANCHISES_DATA } from '../../data/franchisesData';
 import { Franchise } from '../../types';
 import { Shield, MapPin, ChevronRight, Users, Sparkles, Award } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetHelper';
 
 export const FranchiseGrid: React.FC = () => {
   const { setSelectedFranchise, setCurrentPage } = useApp();
@@ -143,7 +144,7 @@ export const FranchiseGrid: React.FC = () => {
         <div className="p-6 rounded-3xl bg-gradient-to-r from-[#FF5500]/10 via-[#F59E0B]/10 to-transparent border border-orange-500/25 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left shadow-sm dark:shadow-tactile">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-2xl bg-[var(--kreeda-surface)] border border-orange-500/30 p-1 flex-shrink-0 hidden sm:block">
-              <img src="/assets/kreeda/kreeda_vip_pass_badge.jpg" alt="VIP Pass" className="w-full h-full object-cover rounded-xl" />
+              <img src={getAssetUrl('assets/kreeda/kreeda_vip_pass_badge.jpg')} alt="VIP Pass" className="w-full h-full object-cover rounded-xl" />
             </div>
             <div>
               <div className="font-bebas text-2xl sm:text-3xl text-[var(--kreeda-text-primary)] tracking-wide">

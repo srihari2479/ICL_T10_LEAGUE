@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { StadiumHeroScenery } from './StadiumHeroScenery';
+import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Trophy, 
   Ticket, 
@@ -155,7 +156,7 @@ export const HeroSection: React.FC = () => {
               
               {/* Grand 3D Championship Trophy Asset with clean alpha */}
               <img 
-                src="/assets/trophy.png?v=4" 
+                src={getAssetUrl('assets/trophy.png?v=4')} 
                 alt="ICL T10 Official Championship Silverware" 
                 className="w-auto h-72 sm:h-84 md:h-92 object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)] group-hover:scale-105 transition-transform duration-500 relative z-10"
               />
