@@ -69,15 +69,17 @@ export const SponsorsView: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center gap-4">
-            {titlePartner.logoDarkUrl ? (
-              <img 
-                src={theme === 'dark' ? titlePartner.logoDarkUrl : (titlePartner.logoUrl || titlePartner.logoDarkUrl)} 
-                alt={titlePartner.name} 
-                className="h-14 sm:h-16 w-auto max-w-[240px] object-contain drop-shadow-md" 
-              />
-            ) : (
-              <span className="text-4xl sm:text-5xl">{titlePartner.logo}</span>
-            )}
+            <div className="w-64 h-24 rounded-2xl bg-white/95 dark:bg-[#070D1F] p-4 flex items-center justify-center border border-amber-500/35 shadow-inner">
+              {titlePartner.logoDarkUrl ? (
+                <img 
+                  src={theme === 'dark' ? titlePartner.logoDarkUrl : (titlePartner.logoUrl || titlePartner.logoDarkUrl)} 
+                  alt={titlePartner.name} 
+                  className="max-h-16 max-w-[210px] w-auto object-contain drop-shadow-sm" 
+                />
+              ) : (
+                <span className="text-4xl sm:text-5xl">{titlePartner.logo}</span>
+              )}
+            </div>
             <a
               href={titlePartner.website}
               target="_blank"
@@ -107,22 +109,26 @@ export const SponsorsView: React.FC = () => {
                 className="glass-card-interactive p-6 flex flex-col justify-between space-y-4 border-2 border-black/10 dark:border-white/10 transition-all duration-200 shadow-sm dark:shadow-tactile"
               >
                 <div className="space-y-3">
-                  <div className="flex items-start justify-between gap-3">
-                    {partner.logoDarkUrl ? (
-                      <div className="h-12 flex items-center">
-                        <img 
-                          src={theme === 'dark' ? partner.logoDarkUrl : (partner.logoUrl || partner.logoDarkUrl)} 
-                          alt={partner.name} 
-                          className="h-10 max-h-10 max-w-[170px] w-auto object-contain drop-shadow-sm" 
-                        />
-                      </div>
-                    ) : (
-                      <span className="text-2xl sm:text-3xl">{partner.logo}</span>
-                    )}
-
+                  <div className="flex items-center justify-between gap-3">
                     <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[#FF5500]">
                       {partner.tier}
                     </span>
+                    <span className="text-[10.5px] text-[var(--kreeda-text-muted)] font-medium">
+                      {partner.categoryScope}
+                    </span>
+                  </div>
+
+                  {/* Logo Display Pedestal */}
+                  <div className="h-16 w-full rounded-2xl bg-white/95 dark:bg-[#070D1F] p-2.5 flex items-center justify-center border border-black/5 dark:border-white/10 shadow-inner group-hover:border-[#FF5500]/30 transition-colors">
+                    {partner.logoDarkUrl ? (
+                      <img 
+                        src={theme === 'dark' ? partner.logoDarkUrl : (partner.logoUrl || partner.logoDarkUrl)} 
+                        alt={partner.name} 
+                        className="max-h-11 max-w-[170px] w-auto object-contain drop-shadow-sm" 
+                      />
+                    ) : (
+                      <span className="text-2xl sm:text-3xl">{partner.logo}</span>
+                    )}
                   </div>
 
                   <div>
