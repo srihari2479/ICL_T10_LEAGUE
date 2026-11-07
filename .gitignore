@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build output
+dist/
+dist-ssr/
+*.local
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Scratch, debug scripts and temporary files
+scripts/
+temp_*
+*.log
+*.tmp
+*.bak
+
+# Build caches & documents
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+*.docx
+*.doc
+*.pdf
+
+# Markdown files: ONLY root README.md should be tracked
+**/*.md
+*.md
+!/README.md
+!README.md
+
+# Operating System & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
