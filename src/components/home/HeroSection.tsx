@@ -47,13 +47,13 @@ export const HeroSection: React.FC = () => {
         
         {/* Floating Season 1 Pill Badge - Clean, Single Line Glass Strip */}
         <div className="flex justify-center lg:justify-start">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/40 backdrop-blur-xl border border-amber-500/40 shadow-lg text-white max-w-full">
-            <span className="flex h-2 w-2 rounded-full bg-[#FF5500] animate-ping flex-shrink-0" />
-            <span className="text-[#FF5500] font-bebas text-xs sm:text-base tracking-widest uppercase whitespace-nowrap">
+          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-2.5 xs:px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/40 backdrop-blur-xl border border-amber-500/40 shadow-lg text-white max-w-full">
+            <span className="flex h-1.5 w-1.5 xs:h-2 xs:w-2 rounded-full bg-[#FF5500] animate-ping flex-shrink-0" />
+            <span className="text-[#FF5500] font-bebas text-[11px] xs:text-xs sm:text-base tracking-wider xs:tracking-widest uppercase whitespace-nowrap">
               SEASON 1 LAUNCH
             </span>
             <span className="text-white/40">•</span>
-            <span className="text-slate-200 font-bold text-[10px] sm:text-xs uppercase tracking-wider whitespace-nowrap">
+            <span className="text-slate-200 font-bold text-[9px] xs:text-[10px] sm:text-xs uppercase tracking-wider whitespace-nowrap truncate">
               Andhra Pradesh &amp; Telangana
             </span>
           </div>
@@ -99,19 +99,19 @@ export const HeroSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-2 w-full sm:flex sm:w-auto sm:items-center sm:gap-3 flex-shrink-0">
                 <Link
                   to="/tickets"
-                  className="h-11 sm:h-12 px-4 sm:px-5 rounded-xl bg-black/40 hover:bg-black/60 backdrop-blur-xl border border-white/25 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-lg btn-tactile transition-all whitespace-nowrap"
+                  className="h-11 sm:h-12 px-2.5 xs:px-4 sm:px-5 rounded-xl bg-black/40 hover:bg-black/60 backdrop-blur-xl border border-white/25 text-white font-bold text-[11px] xs:text-xs sm:text-sm flex items-center justify-center gap-1 xs:gap-1.5 shadow-lg btn-tactile transition-all whitespace-nowrap"
                 >
-                  <Ticket className="w-4 h-4 text-[#FF5500] flex-shrink-0" />
+                  <Ticket className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500] flex-shrink-0" />
                   <span className="whitespace-nowrap">Tickets</span>
                 </Link>
 
                 <Link
                   to="/districts"
-                  className="h-11 sm:h-12 px-4 sm:px-5 rounded-xl bg-black/30 hover:bg-[#FF5500]/20 backdrop-blur-md border border-[#FF5500]/40 text-[#FFCD80] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition btn-tactile whitespace-nowrap"
+                  className="h-11 sm:h-12 px-2 xs:px-4 sm:px-5 rounded-xl bg-black/30 hover:bg-[#FF5500]/20 backdrop-blur-md border border-[#FF5500]/40 text-[#FFCD80] font-bold text-[11px] xs:text-xs sm:text-sm flex items-center justify-center gap-1 transition btn-tactile whitespace-nowrap"
                 >
-                  <MapPin className="w-4 h-4 text-[#FF5500] flex-shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500] flex-shrink-0" />
                   <span className="whitespace-nowrap">My District</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#FF5500] flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF5500] flex-shrink-0" />
                 </Link>
               </div>
             </div>

@@ -91,7 +91,7 @@ export const Navbar: React.FC = () => {
 
       {/* Main Sticky Header: Sleek, Perfect Alignment, Edge-to-Edge */}
       <header className="sticky top-0 z-40 bg-[var(--kreeda-nav-bg)] backdrop-blur-xl border-b border-black/10 dark:border-white/10 transition-colors duration-200 shadow-sm dark:shadow-tactile">
-        <div className="w-full px-4 sm:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between gap-4">
+        <div className="w-full px-2.5 xs:px-4 sm:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Official League Brand Logo */}
           <Link 
@@ -102,7 +102,7 @@ export const Navbar: React.FC = () => {
             <img 
               src="/assets/icl_logo.png" 
               alt="ICL T10 Official League" 
-              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
+              className="h-9 xs:h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
             />
           </Link>
 
@@ -127,61 +127,69 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Right Header Actions */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-3 flex-shrink-0">
             
             {/* Join League Primary CTA (Single-Line, Sleek) */}
             <div className="relative">
               <button
                 onClick={() => setRegisterDropdownOpen(!registerDropdownOpen)}
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-orange-glow transition btn-tactile whitespace-nowrap"
+                className="px-3 xs:px-4 py-1.5 xs:py-2 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-black text-[11px] xs:text-xs sm:text-sm uppercase tracking-wider shadow-orange-glow transition btn-tactile whitespace-nowrap"
               >
                 Join League
               </button>
 
               {registerDropdownOpen && (
-                <div className="absolute right-0 mt-3 w-72 bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/15 rounded-2xl shadow-2xl p-2.5 z-50 animate-in fade-in zoom-in-95 duration-150">
-                  <div className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#FF5500]">
-                    Official Registration Gateways
-                  </div>
-                  
-                  <Link
-                    to="/register-player"
-                    onClick={() => setRegisterDropdownOpen(false)}
-                    className="w-full text-left p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between text-sm text-[var(--kreeda-text-primary)] group transition"
-                  >
-                    <div>
-                      <div className="font-extrabold text-[#FF5500] text-sm sm:text-base transition">
-                        Player Registration
-                      </div>
-                      <div className="text-xs text-[var(--kreeda-text-muted)] mt-0.5">District trials &amp; talent scouting</div>
-                    </div>
-                    <ChevronRight className="w-4 h-4 text-[var(--kreeda-text-muted)] group-hover:translate-x-1 text-[#FF5500] transition-transform" />
-                  </Link>
+                <>
+                  {/* Backdrop to close when clicking outside on mobile */}
+                  <div 
+                    className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs sm:bg-transparent"
+                    onClick={() => setRegisterDropdownOpen(false)} 
+                  />
 
-                  <Link
-                    to="/register-influencer"
-                    onClick={() => setRegisterDropdownOpen(false)}
-                    className="w-full text-left p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between text-sm text-[var(--kreeda-text-primary)] group mt-1 transition"
-                  >
-                    <div>
-                      <div className="font-extrabold text-[#F59E0B] text-sm sm:text-base transition">
-                        Influencer &amp; Creator Hub
-                      </div>
-                      <div className="text-xs text-[var(--kreeda-text-muted)] mt-0.5">Dugout vloggers &amp; presenters</div>
+                  <div className="fixed inset-x-2 xs:inset-x-3 top-[4.25rem] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-3 sm:w-72 max-w-[calc(100vw-1rem)] bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/15 rounded-2xl shadow-2xl p-2 xs:p-2.5 z-50 animate-in fade-in zoom-in-95 duration-150">
+                    <div className="px-2.5 xs:px-3 py-1.5 text-[11px] xs:text-xs font-bold uppercase tracking-widest text-[#FF5500]">
+                      Official Registration Gateways
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[var(--kreeda-text-muted)] group-hover:translate-x-1 text-[#F59E0B] transition-transform" />
-                  </Link>
-
-                  <div className="border-t border-black/10 dark:border-white/10 my-1.5 pt-1.5">
+                    
                     <Link
-                      to="/tracker"
+                      to="/register-player"
                       onClick={() => setRegisterDropdownOpen(false)}
-                      className="w-full text-left px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-2.5 text-xs font-bold text-[var(--kreeda-text-primary)] block"
+                      className="w-full text-left p-2.5 xs:p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between text-sm text-[var(--kreeda-text-primary)] group transition"
                     >
-                      <span>Check Application Status</span>
+                      <div className="min-w-0 pr-2">
+                        <div className="font-extrabold text-[#FF5500] text-xs xs:text-sm sm:text-base transition">
+                          Player Registration
+                        </div>
+                        <div className="text-[10.5px] xs:text-xs text-[var(--kreeda-text-muted)] mt-0.5 truncate">District trials &amp; talent scouting</div>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-[var(--kreeda-text-muted)] group-hover:translate-x-1 text-[#FF5500] transition-transform flex-shrink-0" />
                     </Link>
+
+                    <Link
+                      to="/register-influencer"
+                      onClick={() => setRegisterDropdownOpen(false)}
+                      className="w-full text-left p-2.5 xs:p-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between text-sm text-[var(--kreeda-text-primary)] group mt-1 transition"
+                    >
+                      <div className="min-w-0 pr-2">
+                        <div className="font-extrabold text-[#F59E0B] text-xs xs:text-sm sm:text-base transition">
+                          Influencer &amp; Creator Hub
+                        </div>
+                        <div className="text-[10.5px] xs:text-xs text-[var(--kreeda-text-muted)] mt-0.5 truncate">Dugout vloggers &amp; presenters</div>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-[var(--kreeda-text-muted)] group-hover:translate-x-1 text-[#F59E0B] transition-transform flex-shrink-0" />
+                    </Link>
+
+                    <div className="border-t border-black/10 dark:border-white/10 my-1.5 pt-1.5">
+                      <Link
+                        to="/tracker"
+                        onClick={() => setRegisterDropdownOpen(false)}
+                        className="w-full text-left px-2.5 xs:px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 flex items-center gap-2 text-xs font-bold text-[var(--kreeda-text-primary)] block"
+                      >
+                        <span>Check Application Status</span>
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
 

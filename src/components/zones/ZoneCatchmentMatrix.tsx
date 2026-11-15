@@ -26,7 +26,7 @@ export const ZoneCatchmentMatrix: React.FC = () => {
           return (
             <div
               key={zone.zoneId}
-              className="glass-card p-6 flex flex-col justify-between space-y-4 border-2 border-black/10 dark:border-white/10 hover:border-[#FF5500]/40 transition-all duration-200 shadow-sm dark:shadow-tactile"
+              className="glass-card p-3.5 xs:p-5 sm:p-6 flex flex-col justify-between space-y-3.5 xs:space-y-4 border-2 border-black/10 dark:border-white/10 hover:border-[#FF5500]/40 transition-all duration-200 shadow-sm dark:shadow-tactile"
             >
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">

@@ -231,8 +231,8 @@ export const PlayerRegistrationWizard: React.FC = () => {
   }
 
   return (
-    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 max-w-4xl mx-auto">
-      <div className="glass-card p-6 sm:p-10 space-y-8 border-2 border-[#FF5500]/25 shadow-2xl">
+    <div className="w-full py-6 sm:py-14 px-2.5 xs:px-4 sm:px-8 max-w-4xl mx-auto">
+      <div className="glass-card p-3.5 xs:p-6 sm:p-10 space-y-6 sm:space-y-8 border-2 border-[#FF5500]/25 shadow-2xl">
         
         {/* Header */}
         <div>
@@ -283,22 +283,24 @@ export const PlayerRegistrationWizard: React.FC = () => {
                 <label className="block text-sm font-bold text-[var(--kreeda-text-primary)] mb-2">
                   Mobile Number (10 Digits) *
                 </label>
-                <div className="flex gap-2.5">
-                  <div className="flex items-center px-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-sm font-bold text-[var(--kreeda-text-secondary)]">
-                    +91
+                <div className="flex flex-col xs:flex-row gap-2 xs:gap-2.5">
+                  <div className="flex gap-2 flex-1 min-w-0">
+                    <div className="flex items-center px-3 xs:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] flex-shrink-0">
+                      +91
+                    </div>
+                    <input
+                      type="tel"
+                      maxLength={10}
+                      value={mobile}
+                      onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
+                      placeholder="98490 12345"
+                      className="w-full min-w-0 flex-1 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm sm:text-base focus:outline-none focus:border-[#FF5500]"
+                    />
                   </div>
-                  <input
-                    type="tel"
-                    maxLength={10}
-                    value={mobile}
-                    onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
-                    placeholder="98490 12345"
-                    className="flex-1 px-4 py-3 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm sm:text-base focus:outline-none focus:border-[#FF5500]"
-                  />
                   <button
                     type="button"
                     onClick={handleSendOtp}
-                    className="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] text-[#070B14] font-bebas text-base uppercase tracking-wider font-black transition btn-tactile shadow-orange-glow"
+                    className="w-full xs:w-auto px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] text-[#070B14] font-bebas text-sm sm:text-base uppercase tracking-wider font-black transition btn-tactile shadow-orange-glow whitespace-nowrap flex items-center justify-center flex-shrink-0"
                   >
                     {otpSent ? 'Resend' : 'Send OTP'}
                   </button>
@@ -306,34 +308,34 @@ export const PlayerRegistrationWizard: React.FC = () => {
               </div>
 
               {otpSent && (
-                <div className="space-y-3 p-5 rounded-2xl bg-[var(--kreeda-surface-elevated)] border border-black/10 dark:border-white/10">
+                <div className="space-y-3 p-4 xs:p-5 rounded-2xl bg-[var(--kreeda-surface-elevated)] border border-black/10 dark:border-white/10">
                   <div className="flex items-center justify-between">
-                    <label className="text-sm font-bold text-[var(--kreeda-text-primary)]">
+                    <label className="text-xs xs:text-sm font-bold text-[var(--kreeda-text-primary)]">
                       Enter 4-Digit OTP Code
                     </label>
-                    <span className="text-xs text-emerald-400 font-mono font-bold">
-                      (Simulated OTP: 5892)
+                    <span className="text-[11px] xs:text-xs text-emerald-400 font-mono font-bold">
+                      (Simulated: 5892)
                     </span>
                   </div>
-                  <div className="flex gap-2.5">
+                  <div className="flex flex-col xs:flex-row gap-2 xs:gap-2.5">
                     <input
                       type="text"
                       maxLength={4}
                       value={otp}
                       onChange={(e) => setOtp(e.target.value)}
                       placeholder="5892"
-                      className="flex-1 px-4 py-3 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-center font-mono text-xl tracking-widest text-[var(--kreeda-text-primary)] focus:outline-none focus:border-[#F59E0B]"
+                      className="w-full min-w-0 flex-1 px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-center font-mono text-xl tracking-widest text-[var(--kreeda-text-primary)] focus:outline-none focus:border-[#F59E0B]"
                     />
                     <button
                       type="button"
                       onClick={handleVerifyOtp}
-                      className="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white shadow-orange-glow font-bebas text-base uppercase tracking-wider font-bold transition btn-tactile"
+                      className="w-full xs:w-auto px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white shadow-orange-glow font-bebas text-sm sm:text-base uppercase tracking-wider font-bold transition btn-tactile whitespace-nowrap flex items-center justify-center flex-shrink-0"
                     >
                       {otpVerified ? 'Verified ✓' : 'Verify OTP'}
                     </button>
                   </div>
                   {otpVerified && (
-                    <div className="flex items-center gap-2 text-sm text-emerald-400 font-bold pt-1">
+                    <div className="flex items-center gap-2 text-xs xs:text-sm text-emerald-400 font-bold pt-1">
                       <CheckCircle2 className="w-4 h-4" />
                       <span>Mobile Number Verified Successfully!</span>
                     </div>
@@ -661,12 +663,12 @@ export const PlayerRegistrationWizard: React.FC = () => {
           )}
 
           {/* Wizard Action Buttons */}
-          <div className="flex items-center justify-between pt-6 border-t border-black/10 dark:border-white/10">
+          <div className="flex items-center justify-between gap-2.5 pt-6 border-t border-black/10 dark:border-white/10">
             {currentStep > 1 ? (
               <button
                 type="button"
                 onClick={handlePrevStep}
-                className="py-3 px-5 rounded-2xl bg-black/5 dark:bg-white/5 hover:bg-black/5 dark:bg-white/10 text-[var(--kreeda-text-primary)] font-bold text-sm flex items-center gap-2 border border-black/10 dark:border-white/10 transition btn-tactile"
+                className="py-2.5 sm:py-3 px-3.5 sm:px-5 rounded-xl sm:rounded-2xl bg-black/5 dark:bg-white/5 hover:bg-black/5 dark:bg-white/10 text-[var(--kreeda-text-primary)] font-bold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 border border-black/10 dark:border-white/10 transition btn-tactile whitespace-nowrap"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back</span>
@@ -677,17 +679,17 @@ export const PlayerRegistrationWizard: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNextStep}
-                className="py-3 px-6 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] hover:brightness-110 text-[#070B14] font-bebas text-lg tracking-wider uppercase font-black flex items-center gap-2 shadow-orange-glow transition btn-tactile"
+                className="py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] hover:brightness-110 text-[#070B14] font-bebas text-base sm:text-lg tracking-wider uppercase font-black flex items-center gap-1.5 sm:gap-2 shadow-orange-glow transition btn-tactile whitespace-nowrap"
               >
                 <span>Continue</span>
-                <ArrowRight className="w-5 h-5 text-[#070B14]" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#070B14]" />
               </button>
             ) : (
               <button
                 type="submit"
-                className="py-3 px-8 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:brightness-110 text-slate-950 font-bebas text-lg tracking-wider uppercase font-black flex items-center gap-2 shadow-lg shadow-emerald-500/25 transition btn-tactile"
+                className="py-2.5 sm:py-3 px-4 sm:px-8 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:brightness-110 text-slate-950 font-bebas text-base sm:text-lg tracking-wider uppercase font-black flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-emerald-500/25 transition btn-tactile whitespace-nowrap"
               >
-                <CheckCircle2 className="w-5 h-5" />
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Submit &amp; Generate ID</span>
               </button>
             )}

@@ -128,8 +128,8 @@ export const InfluencerRegistrationWizard: React.FC = () => {
   }
 
   return (
-    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 max-w-4xl mx-auto">
-      <div className="glass-card p-6 sm:p-10 space-y-8 border-2 border-black/10 dark:border-white/15 shadow-xl">
+    <div className="w-full py-6 sm:py-14 px-2.5 xs:px-4 sm:px-8 max-w-4xl mx-auto">
+      <div className="glass-card p-3.5 xs:p-6 sm:p-10 space-y-6 sm:space-y-8 border-2 border-black/10 dark:border-white/15 shadow-xl">
         
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-black/10 dark:border-white/10">
@@ -141,7 +141,7 @@ export const InfluencerRegistrationWizard: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[var(--kreeda-text-primary)] tracking-wide">
               INFLUENCER &amp; CREATOR PORTAL
             </h2>
-            <p className="text-sm sm:text-base text-[var(--kreeda-text-secondary)] mt-1 leading-relaxed">
+            <p className="text-xs sm:text-base text-[var(--kreeda-text-secondary)] mt-1 leading-relaxed">
               Are you a content creator, vlogger, or cricket analyst? Join the ICL T10 dugout creator league for official credentials.
             </p>
           </div>
@@ -153,11 +153,11 @@ export const InfluencerRegistrationWizard: React.FC = () => {
         </div>
 
         {/* Creator Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Full Name / Channel Name *
               </label>
               <input
@@ -165,13 +165,13 @@ export const InfluencerRegistrationWizard: React.FC = () => {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="e.g. Ramesh Reddy (Telugu Cricket Talks)"
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Mobile Number (WhatsApp) *
               </label>
               <input
@@ -179,21 +179,21 @@ export const InfluencerRegistrationWizard: React.FC = () => {
                 value={mobile}
                 onChange={(e) => setMobile(e.target.value)}
                 placeholder="98490 12345"
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
                 required
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Primary Platform *
               </label>
               <select
                 value={primaryPlatform}
                 onChange={(e) => setPrimaryPlatform(e.target.value as any)}
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
               >
                 <option value="Instagram">Instagram</option>
                 <option value="YouTube">YouTube</option>
@@ -203,7 +203,7 @@ export const InfluencerRegistrationWizard: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Handle / Channel URL *
               </label>
               <input
@@ -211,13 +211,13 @@ export const InfluencerRegistrationWizard: React.FC = () => {
                 value={platformHandle}
                 onChange={(e) => setPlatformHandle(e.target.value)}
                 placeholder="@mycreatorshow"
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Follower Count *
               </label>
               <input
@@ -225,21 +225,21 @@ export const InfluencerRegistrationWizard: React.FC = () => {
                 value={followerCount}
                 onChange={(e) => setFollowerCount(e.target.value)}
                 placeholder="e.g. 150K"
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
                 required
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Content Niche / Style *
               </label>
               <select
                 value={contentNiche}
                 onChange={(e) => setContentNiche(e.target.value as any)}
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
               >
                 <option value="Cricket Commentary">Cricket Commentary &amp; Tactical Analysis</option>
                 <option value="Comedy & Entertainment">Comedy, Roasts &amp; Entertainment</option>
@@ -249,13 +249,13 @@ export const InfluencerRegistrationWizard: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Preferred Collaboration Role *
               </label>
               <select
                 value={collaborationPreference}
                 onChange={(e) => setCollaborationPreference(e.target.value as any)}
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
               >
                 <option value="Matchday Live Dugout Presenter">Matchday Live Dugout Presenter</option>
                 <option value="Digital Team Creator">Dedicated Franchise Digital Creator</option>
@@ -264,9 +264,9 @@ export const InfluencerRegistrationWizard: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 Base City
               </label>
               <input
@@ -274,18 +274,18 @@ export const InfluencerRegistrationWizard: React.FC = () => {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="e.g. Hyderabad, Vizag, Vijayawada, Warangal"
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[var(--kreeda-text-secondary)] mb-2">
+              <label className="block text-xs sm:text-sm font-bold text-[var(--kreeda-text-secondary)] mb-1.5 sm:mb-2">
                 State
               </label>
               <select
                 value={state}
                 onChange={(e) => setState(e.target.value as any)}
-                className="w-full px-4 py-3 rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-sm focus:outline-none focus:border-[#FF5500]"
+                className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[var(--kreeda-surface)] border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] text-xs sm:text-sm focus:outline-none focus:border-[#FF5500]"
               >
                 <option value="Telangana">Telangana</option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -296,7 +296,7 @@ export const InfluencerRegistrationWizard: React.FC = () => {
           <div className="pt-4 border-t border-black/10 dark:border-white/10">
             <button
               type="submit"
-              className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-xl tracking-wider uppercase font-black flex items-center justify-center gap-2.5 shadow-orange-glow transition btn-tactile"
+              className="w-full py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-lg sm:text-xl tracking-wider uppercase font-black flex items-center justify-center gap-2 shadow-orange-glow transition btn-tactile"
             >
               <Flame className="w-5 h-5 text-white" />
               <span>Submit Creator Application</span>

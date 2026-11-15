@@ -26,7 +26,7 @@ export const AboutLeagueView: React.FC = () => {
   ];
 
   return (
-    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-12">
+    <div className="w-full py-6 sm:py-14 px-2.5 xs:px-4 sm:px-8 lg:px-12 xl:px-16 space-y-6 sm:space-y-12 pb-8 sm:pb-12">
       
       {/* Header with 3D Trophy Banner */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -116,13 +116,13 @@ export const AboutLeagueView: React.FC = () => {
       </div>
 
       {/* Kreeda App Technical Boundary Card */}
-      <div className="glass-card p-8 border-2 border-black/10 dark:border-white/10 space-y-4 shadow-xl">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-          <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#FF5500]">
+      <div className="glass-card p-4 xs:p-6 sm:p-8 border-2 border-black/10 dark:border-white/10 space-y-4 shadow-xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5">
+          <div className="space-y-1.5 sm:space-y-2">
+            <span className="text-[11px] xs:text-xs font-bold uppercase tracking-widest text-[#FF5500]">
               Technical Governance &amp; Scoring Authority
             </span>
-            <h3 className="font-bebas text-xl sm:text-2xl text-[var(--kreeda-text-primary)] tracking-wide">
+            <h3 className="font-bebas text-lg xs:text-xl sm:text-2xl text-[var(--kreeda-text-primary)] tracking-wide">
               KREEDA APP: SYSTEM OF RECORD
             </h3>
             <p className="text-xs sm:text-sm text-[var(--kreeda-text-secondary)] max-w-2xl leading-relaxed">
@@ -132,7 +132,7 @@ export const AboutLeagueView: React.FC = () => {
 
           <button
             onClick={() => openKreedaBoundaryModal()}
-            className="py-2.5 sm:py-3 px-5 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 transition self-start sm:self-auto flex-shrink-0 shadow-orange-glow btn-tactile"
+            className="py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition self-stretch sm:self-auto flex-shrink-0 shadow-orange-glow btn-tactile whitespace-nowrap"
           >
             <span>Read Architecture Boundary</span>
             <ExternalLink className="w-4 h-4 text-white" />
@@ -141,17 +141,17 @@ export const AboutLeagueView: React.FC = () => {
       </div>
 
       {/* Quick Action Footer */}
-      <div className="pt-2 flex flex-wrap items-center gap-4">
+      <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pb-4">
         <button
           onClick={() => setCurrentPage('register-player')}
-          className="py-3.5 px-7 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-lg tracking-wider uppercase font-black transition shadow-orange-glow btn-tactile"
+          className="w-full sm:w-auto py-3.5 px-6 sm:px-7 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-base sm:text-lg tracking-wider uppercase font-black transition shadow-orange-glow btn-tactile text-center justify-center"
         >
           Enroll for Player Trials
         </button>
 
         <button
           onClick={() => setCurrentPage('zones')}
-          className="py-3.5 px-6 rounded-2xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-[var(--kreeda-text-primary)] font-bold text-sm border border-black/10 dark:border-white/10 transition btn-tactile"
+          className="w-full sm:w-auto py-3.5 px-5 sm:px-6 rounded-xl sm:rounded-2xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-[var(--kreeda-text-primary)] font-bold text-xs sm:text-sm border border-black/10 dark:border-white/10 transition btn-tactile text-center justify-center"
         >
           Explore Catchment Map
         </button>

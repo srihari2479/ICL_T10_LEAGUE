@@ -19,27 +19,27 @@ export const Footer: React.FC = () => {
     <footer className="w-full bg-white dark:bg-[#0A1128] border-t border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm mt-auto shadow-2xl relative z-10 transition-colors duration-200">
       
       {/* Top Banner: Responsible Tournament & Kreeda Boundary */}
-      <div className="footer-top-banner border-b border-black/10 dark:border-white/10 bg-[#F8F9FC] dark:bg-[#070D1F] py-4 sm:py-5 px-4 sm:px-8 lg:px-12 xl:px-16 transition-colors duration-200">
-        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <div className="flex items-center gap-3">
-            <Shield className="w-5 h-5 text-[#FF5500] flex-shrink-0" />
-            <span className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+      <div className="footer-top-banner border-b border-black/10 dark:border-white/10 bg-[#F8F9FC] dark:bg-[#070D1F] py-3.5 sm:py-5 px-2.5 xs:px-4 sm:px-8 lg:px-12 xl:px-16 transition-colors duration-200">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-center md:text-left">
+          <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 text-left">
+            <Shield className="w-4 h-4 xs:w-5 xs:h-5 text-[#FF5500] flex-shrink-0 mt-0.5 sm:mt-0" />
+            <span className="text-[11px] xs:text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
               <strong className="text-slate-900 dark:text-white font-bold">Official DPR Architectural Governance:</strong> Live cricket scores, wagon wheels, commentary &amp; points standings are powered exclusively via Kreeda App.
             </span>
           </div>
 
           <button
             onClick={() => openKreedaBoundaryModal()}
-            className="text-xs sm:text-sm font-bold text-[#FF5500] hover:text-[#FF661A] flex items-center gap-2 transition btn-tactile whitespace-nowrap"
+            className="text-[11px] xs:text-xs sm:text-sm font-bold text-[#FF5500] hover:text-[#FF661A] flex items-center gap-1.5 transition btn-tactile whitespace-nowrap"
           >
             <span>Learn About Kreeda App Integration</span>
-            <ExternalLink className="w-4 h-4 text-[#FF5500]" />
+            <ExternalLink className="w-3.5 h-3.5 text-[#FF5500]" />
           </button>
         </div>
       </div>
 
       {/* Main Footer Links Grid - Edge to Edge Full Width */}
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="w-full px-2.5 xs:px-4 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
         
         {/* Brand Column */}
         <div className="lg:col-span-2 space-y-4">
