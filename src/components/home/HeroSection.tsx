@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { StadiumHeroScenery } from './StadiumHeroScenery';
-import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Trophy, 
   Ticket, 
@@ -39,40 +38,40 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden w-full pt-3 sm:pt-5 pb-14 sm:pb-20 px-4 sm:px-8 lg:px-12 xl:px-16 border-b border-black/10 dark:border-white/10 min-h-[580px] flex items-center">
+    <section className="relative overflow-hidden w-full pt-4 sm:pt-8 pb-10 sm:pb-20 px-4 sm:px-8 lg:px-12 xl:px-16 border-b border-black/10 dark:border-white/10 min-h-[580px] lg:min-h-[620px] flex items-center">
       
       {/* High-Visibility Live Stadium Scenery Video/Motion Backdrop */}
       <StadiumHeroScenery />
 
-      <div className="w-full relative z-10 space-y-8 max-w-7xl mx-auto">
+      <div className="w-full relative z-10 space-y-4 sm:space-y-8 max-w-7xl mx-auto">
         
-        {/* Floating Season 1 Pill Badge - Container-less Sleek Glass Strip */}
+        {/* Floating Season 1 Pill Badge - Clean, Single Line Glass Strip */}
         <div className="flex justify-center lg:justify-start">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-xl border border-amber-500/40 shadow-lg text-white">
-            <span className="flex h-2.5 w-2.5 rounded-full bg-[#FF5500] animate-ping" />
-            <span className="text-[#FF5500] font-bebas text-sm sm:text-base tracking-widest uppercase">
-              SEASON 1 OFFICIAL LAUNCH
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/40 backdrop-blur-xl border border-amber-500/40 shadow-lg text-white max-w-full">
+            <span className="flex h-2 w-2 rounded-full bg-[#FF5500] animate-ping flex-shrink-0" />
+            <span className="text-[#FF5500] font-bebas text-xs sm:text-base tracking-widest uppercase whitespace-nowrap">
+              SEASON 1 LAUNCH
             </span>
-            <span className="text-white/40 hidden xs:inline">•</span>
-            <span className="hidden xs:inline text-slate-200 font-bold text-xs uppercase tracking-wider">
+            <span className="text-white/40">•</span>
+            <span className="text-slate-200 font-bold text-[10px] sm:text-xs uppercase tracking-wider whitespace-nowrap">
               Andhra Pradesh &amp; Telangana
             </span>
           </div>
         </div>
 
         {/* Completely Container-less Fluid Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
           
           {/* Left 7 Columns: Floating Typography & Primary CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
             
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#FF5500]/20 border border-[#FF5500]/40 text-[#FF661A] font-bold text-xs uppercase tracking-widest backdrop-blur-md">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-lg bg-[#FF5500]/20 border border-[#FF5500]/40 text-[#FF661A] font-bold text-[11px] sm:text-xs uppercase tracking-widest backdrop-blur-md">
                 <Flame className="w-3.5 h-3.5 text-[#FF5500]" />
                 <span>T10 TELUGU CHAMPIONSHIP</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bebas tracking-wide text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)] leading-[0.98]">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bebas tracking-wide text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)] leading-[0.98]">
                 THE BATTLE FOR <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] via-[#FF7733] to-[#F59E0B] drop-shadow-sm">
                   TELUGU CRICKET
@@ -82,118 +81,129 @@ export const HeroSection: React.FC = () => {
                 </span>
               </h1>
 
-              <p className="text-sm sm:text-base md:text-lg text-slate-100 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] pt-1">
+              <p className="text-xs sm:text-base md:text-lg text-slate-100 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] pt-0.5">
                 8 Regional Franchises. 45+ Catchment Districts. 10 Explosive Overs. The official grassroots-to-floodlights cricket league uniting millions of Telugu fans.
               </p>
             </div>
 
-            {/* High Impact Primary Actions (Container-less Floating Buttons) */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
+            {/* High Impact Primary Actions (Mobile-Optimized Grid) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2 sm:gap-3.5 pt-1 w-full max-w-md mx-auto lg:mx-0">
               <Link
                 to="/register-player"
-                className="py-3 px-6 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bold text-sm uppercase tracking-wider flex items-center gap-2 shadow-orange-glow btn-tactile border border-white/20"
+                className="py-2.5 sm:py-3 px-6 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-orange-glow btn-tactile border border-white/20"
               >
                 <UserPlus className="w-4 h-4 text-white" />
                 <span>Register for Trials</span>
               </Link>
 
-              <Link
-                to="/tickets"
-                className="py-3 px-5 rounded-xl bg-black/40 hover:bg-black/60 backdrop-blur-xl border border-white/25 text-white font-bold text-sm flex items-center gap-2 shadow-lg btn-tactile transition-all"
-              >
-                <Ticket className="w-4 h-4 text-[#FF5500]" />
-                <span>Book Match Tickets</span>
-              </Link>
+              <div className="grid grid-cols-2 gap-2 w-full sm:flex sm:w-auto">
+                <Link
+                  to="/tickets"
+                  className="py-2 sm:py-3 px-3 sm:px-5 rounded-xl bg-black/40 hover:bg-black/60 backdrop-blur-xl border border-white/25 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-lg btn-tactile transition-all"
+                >
+                  <Ticket className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500]" />
+                  <span>Tickets</span>
+                </Link>
 
-              <Link
-                to="/districts"
-                className="py-3 px-5 rounded-xl bg-black/30 hover:bg-[#FF5500]/20 backdrop-blur-md border border-[#FF5500]/40 text-[#FFCD80] font-bold text-sm flex items-center gap-1.5 transition btn-tactile"
-              >
-                <MapPin className="w-4 h-4 text-[#FF5500]" />
-                <span>Find My District Team</span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#FF5500]" />
-              </Link>
+                <Link
+                  to="/districts"
+                  className="py-2 sm:py-3 px-3 sm:px-5 rounded-xl bg-black/30 hover:bg-[#FF5500]/20 backdrop-blur-md border border-[#FF5500]/40 text-[#FFCD80] font-bold text-xs sm:text-sm flex items-center justify-center gap-1 transition btn-tactile whitespace-nowrap"
+                >
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500]" />
+                  <span>My District</span>
+                  <ChevronRight className="w-3 h-3 text-[#FF5500]" />
+                </Link>
+              </div>
             </div>
 
             {/* Key Assurance Badges */}
-            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs text-slate-200 font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981]" />
-                <span>Automated District Catchment Routing</span>
+            <div className="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-x-3.5 gap-y-1 text-[10.5px] sm:text-xs text-slate-200 font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981] flex-shrink-0" />
+                <span>District Catchment Routing</span>
               </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
-                <span>Live Telemetry via Kreeda App</span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500] flex-shrink-0" />
+                <span>Kreeda App Telemetry</span>
               </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#F59E0B] shadow-[0_0_8px_#F59E0B]" />
-                <span>Instant Scannable QR E-Tickets</span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shadow-[0_0_8px_#F59E0B] flex-shrink-0" />
+                <span>QR E-Tickets</span>
               </span>
             </div>
 
           </div>
 
           {/* Right 5 Columns: Container-less 3D Trophy Showcase & Telemetry Countdown */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative select-none">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative select-none pt-2 lg:pt-0">
             
             {/* Ambient Spotlight & Halo behind Trophy */}
             <div className="absolute -top-10 w-72 sm:w-96 h-72 sm:h-96 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.25)_0%,rgba(255,85,0,0.12)_45%,transparent_70%)] pointer-events-none blur-2xl animate-pulse-subtle" />
 
-            {/* Floating Silverware Prestige Badge */}
-            <div className="mb-2 px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-xl border border-amber-500/40 shadow-xl flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
-              <span className="text-[11px] font-black text-amber-300 uppercase tracking-widest">
-                ICL T10 SEASON 1 TROPHY
+            {/* Single Official Championship Trophy & ₹1 Crore Prize Pool Badge with Continuous Glowing Border & Light Blink Animation */}
+            <a 
+              href="#prize-pool"
+              className="trophy-badge-glow mb-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/60 backdrop-blur-xl border-2 flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 group cursor-pointer max-w-full"
+            >
+              <span className="relative flex h-2 w-2 flex-shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-80" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
               </span>
-              <span className="text-white/30">•</span>
-              <span className="text-[10px] text-slate-300 font-bold uppercase tracking-wider">
+
+              <span className="font-bebas text-xs sm:text-base tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-100 to-amber-400 font-black whitespace-nowrap">
+                ₹1 CRORE PRIZE POOL
+              </span>
+
+              <span className="text-white/40">•</span>
+
+              <span className="text-[10px] sm:text-[11px] text-slate-200 font-bold uppercase tracking-wider whitespace-nowrap">
                 1 TROPHY • 8 TEAMS
               </span>
-            </div>
+            </a>
 
             {/* 3D Trophy Asset Display (Container-less Broadcast Stage) */}
-            <div className="relative w-full max-w-[340px] sm:max-w-[420px] flex flex-col items-center justify-center py-2 group">
+            <div className="relative w-full max-w-[260px] xs:max-w-[300px] sm:max-w-[340px] lg:max-w-[420px] flex flex-col items-center justify-center py-1 sm:py-2 group">
               
               {/* Grand 3D Championship Trophy Asset with clean alpha */}
               <img 
-                src={getAssetUrl('assets/trophy.png?v=4')} 
+                src="/assets/trophy.png?v=4" 
                 alt="ICL T10 Official Championship Silverware" 
-                className="w-auto h-72 sm:h-84 md:h-92 object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)] group-hover:scale-105 transition-transform duration-500 relative z-10"
+                className="w-auto h-48 xs:h-56 sm:h-72 md:h-84 lg:h-92 object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)] group-hover:scale-105 transition-transform duration-500 relative z-10" 
               />
 
               {/* Broadcast Stage Soft Contact Shadow & Ground Glow */}
-              <div className="w-48 sm:w-60 h-4 bg-black/70 rounded-full blur-md -mt-2 relative z-0" />
-              <div className="w-64 sm:w-76 h-8 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.35)_0%,rgba(255,85,0,0.15)_40%,transparent_75%)] rounded-full blur-lg -mt-3 relative z-0 pointer-events-none" />
+              <div className="w-36 xs:w-48 sm:w-60 h-3.5 sm:h-4 bg-black/70 rounded-full blur-md -mt-2 relative z-0" />
+              <div className="w-52 xs:w-64 sm:w-76 h-6 sm:h-8 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.35)_0%,rgba(255,85,0,0.15)_40%,transparent_75%)] rounded-full blur-lg -mt-3 relative z-0 pointer-events-none" />
             </div>
 
             {/* Container-less Floating Telemetry Countdown Bar */}
-            <div className="w-full max-w-sm sm:max-w-md mt-2 p-3 sm:p-3.5 rounded-2xl bg-black/50 backdrop-blur-xl border border-white/20 shadow-2xl space-y-2">
+            <div className="w-full max-w-xs sm:max-w-md mt-1.5 sm:mt-2 p-2.5 sm:p-3.5 rounded-2xl bg-black/50 backdrop-blur-xl border border-white/20 shadow-2xl space-y-1.5 sm:space-y-2">
               
-              <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-300 px-1">
+              <div className="flex items-center justify-between text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-300 px-1">
                 <span className="flex items-center gap-1.5 text-amber-400">
                   <Calendar className="w-3.5 h-3.5 text-[#FF5500]" />
-                  <span>Countdown to Grand Finale</span>
+                  <span>Countdown to Finale</span>
                 </span>
-                <span className="text-[#FF5500] font-black font-bebas text-sm tracking-wider">Nov 22, 2026 • Uppal</span>
+                <span className="text-[#FF5500] font-black font-bebas text-xs sm:text-sm tracking-wider">Nov 22 • Uppal</span>
               </div>
 
               {/* 4 Sleek Telemetry Cells */}
-              <div className="grid grid-cols-4 gap-2 text-center">
-                <div className="py-1.5 px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
-                  <div className="font-bebas text-xl sm:text-2xl text-[#FF5500] leading-none">{timeLeft.days}</div>
-                  <span className="text-[9px] uppercase font-bold text-slate-300 tracking-wider">Days</span>
+              <div className="grid grid-cols-4 gap-1.5 sm:gap-2 text-center">
+                <div className="py-1 px-1.5 sm:py-1.5 sm:px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
+                  <div className="font-bebas text-lg sm:text-2xl text-[#FF5500] leading-none">{timeLeft.days}</div>
+                  <span className="text-[8px] sm:text-[9px] uppercase font-bold text-slate-300 tracking-wider">Days</span>
                 </div>
-                <div className="py-1.5 px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
-                  <div className="font-bebas text-xl sm:text-2xl text-white leading-none">{timeLeft.hours}</div>
-                  <span className="text-[9px] uppercase font-bold text-slate-300 tracking-wider">Hours</span>
+                <div className="py-1 px-1.5 sm:py-1.5 sm:px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
+                  <div className="font-bebas text-lg sm:text-2xl text-white leading-none">{timeLeft.hours}</div>
+                  <span className="text-[8px] sm:text-[9px] uppercase font-bold text-slate-300 tracking-wider">Hours</span>
                 </div>
-                <div className="py-1.5 px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
-                  <div className="font-bebas text-xl sm:text-2xl text-white leading-none">{timeLeft.minutes}</div>
-                  <span className="text-[9px] uppercase font-bold text-slate-300 tracking-wider">Mins</span>
+                <div className="py-1 px-1.5 sm:py-1.5 sm:px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
+                  <div className="font-bebas text-lg sm:text-2xl text-white leading-none">{timeLeft.minutes}</div>
+                  <span className="text-[8px] sm:text-[9px] uppercase font-bold text-slate-300 tracking-wider">Mins</span>
                 </div>
-                <div className="py-1.5 px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
-                  <div className="font-bebas text-xl sm:text-2xl text-amber-400 leading-none">{timeLeft.seconds}</div>
-                  <span className="text-[9px] uppercase font-bold text-slate-300 tracking-wider">Secs</span>
+                <div className="py-1 px-1.5 sm:py-1.5 sm:px-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm">
+                  <div className="font-bebas text-lg sm:text-2xl text-amber-400 leading-none">{timeLeft.seconds}</div>
+                  <span className="text-[8px] sm:text-[9px] uppercase font-bold text-slate-300 tracking-wider">Secs</span>
                 </div>
               </div>
 

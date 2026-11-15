@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NEWS_DATA } from '../../data/mediaData';
 import { NewsItem } from '../../types';
 import { Newspaper, Clock, User, Share2, X, ChevronRight, Video, Image as ImageIcon } from 'lucide-react';
-import { getAssetUrl } from '../../utils/assetHelper';
 
 export const MediaCentreView: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
@@ -14,7 +13,7 @@ export const MediaCentreView: React.FC = () => {
   });
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-6 sm:space-y-8">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
       
       {/* Header */}
       <div>
@@ -63,7 +62,7 @@ export const MediaCentreView: React.FC = () => {
                 loading="lazy"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = getAssetUrl('assets/kreeda/stadium_daylight_banner.jpg');
+                  e.currentTarget.src = '/assets/kreeda/stadium_daylight_banner.jpg';
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />

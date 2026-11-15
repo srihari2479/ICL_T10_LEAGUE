@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp, NavigationPage } from '../../context/AppContext';
-import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Menu, 
   X, 
@@ -42,11 +41,11 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Ticker Bar: Harmonized Theme, High Contrast, Zero Clutter */}
-      <div className="w-full max-w-full overflow-hidden bg-[var(--kreeda-ticker-bg)] border-b border-black/10 dark:border-white/10 py-1.5 px-3 sm:px-8 lg:px-12 text-xs transition-colors duration-200">
-        <div className="w-full max-w-full flex items-center justify-between gap-3 overflow-x-auto no-scrollbar whitespace-nowrap">
+      <div className="w-full bg-[var(--kreeda-ticker-bg)] border-b border-black/10 dark:border-white/10 py-1.5 px-4 sm:px-8 lg:px-12 text-xs transition-colors duration-200">
+        <div className="w-full flex items-center justify-between gap-4 overflow-x-auto no-scrollbar whitespace-nowrap">
           
           {/* Live Match Score Strip */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3">
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-600 dark:text-rose-400 font-extrabold text-[10px] tracking-wider uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
               LIVE
@@ -65,8 +64,8 @@ export const Navbar: React.FC = () => {
             </span>
           </div>
 
-          {/* Quick Utility Links (Desktop / Tablet) */}
-          <div className="hidden md:flex items-center gap-3.5 text-xs font-semibold flex-shrink-0">
+          {/* Quick Utility Links (Clean, No Clutter Icons) */}
+          <div className="flex items-center gap-3.5 text-xs font-semibold">
             <button 
               onClick={() => openKreedaBoundaryModal({
                 title: 'Kreeda App Live Match Center',
@@ -78,7 +77,7 @@ export const Navbar: React.FC = () => {
               <ExternalLink className="w-3 h-3 text-[#FF5500]" />
             </button>
 
-            <span className="text-black/15 dark:text-white/20">|</span>
+            <span className="text-black/15 dark:text-white/20 hidden sm:inline">|</span>
 
             <Link 
               to="/tracker"
@@ -91,19 +90,19 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Main Sticky Header: Sleek, Perfect Alignment, Edge-to-Edge */}
-      <header className="sticky top-0 z-40 w-full max-w-full overflow-x-hidden bg-[var(--kreeda-nav-bg)] backdrop-blur-xl border-b border-black/10 dark:border-white/10 transition-colors duration-200 shadow-sm dark:shadow-tactile">
-        <div className="w-full max-w-full px-3 sm:px-8 lg:px-12 h-14 sm:h-16 flex items-center justify-between gap-3">
+      <header className="sticky top-0 z-40 bg-[var(--kreeda-nav-bg)] backdrop-blur-xl border-b border-black/10 dark:border-white/10 transition-colors duration-200 shadow-sm dark:shadow-tactile">
+        <div className="w-full px-4 sm:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between gap-4">
           
           {/* Official League Brand Logo */}
           <Link 
             to="/"
-            className="flex items-center group focus:outline-none flex-shrink-0 py-0.5"
+            className="flex items-center group focus:outline-none flex-shrink-0 py-1"
             aria-label="ICL T10 Home"
           >
             <img 
-              src={getAssetUrl('assets/icl_logo.png')} 
+              src="/assets/icl_logo.png" 
               alt="ICL T10 Official League" 
-              className="h-9 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
+              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
             />
           </Link>
 
@@ -134,7 +133,7 @@ export const Navbar: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setRegisterDropdownOpen(!registerDropdownOpen)}
-                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-orange-glow transition btn-tactile whitespace-nowrap"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-orange-glow transition btn-tactile whitespace-nowrap"
               >
                 Join League
               </button>
@@ -187,12 +186,12 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Utility Divider & Controls */}
-            <div className="flex items-center gap-1.5 pl-1.5 sm:pl-2 border-l border-black/10 dark:border-white/10">
+            <div className="flex items-center gap-1.5 pl-2 border-l border-black/10 dark:border-white/10">
               
-              {/* Admin Desk Link Button - Desktop / Tablet */}
+              {/* Admin Desk Link Button */}
               <Link
                 to="/admin"
-                className="hidden sm:flex p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-emerald-600 dark:text-emerald-400 border border-black/10 dark:border-white/15 transition btn-tactile"
+                className="p-2 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-emerald-600 dark:text-emerald-400 border border-black/10 dark:border-white/15 transition btn-tactile"
                 title="Admin & Operations Center"
               >
                 <ShieldCheck className="w-4 h-4" />

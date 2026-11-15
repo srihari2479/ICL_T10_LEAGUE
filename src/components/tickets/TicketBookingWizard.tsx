@@ -81,7 +81,7 @@ export const TicketBookingWizard: React.FC = () => {
   // If booking confirmed, render official E-Ticket
   if (latestConfirmedBooking) {
     return (
-      <div className="w-full pt-3 sm:pt-5 pb-12 px-4 sm:px-8 max-w-3xl mx-auto">
+      <div className="w-full py-12 px-4 sm:px-8 max-w-3xl mx-auto">
         <div className="glass-card p-6 sm:p-10 border-2 border-black/10 dark:border-white/10 relative overflow-hidden space-y-6 shadow-xl">
           
           <div className="text-center space-y-1.5">
@@ -201,7 +201,7 @@ export const TicketBookingWizard: React.FC = () => {
   }
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-6 sm:space-y-8">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
       
       {/* Page Header */}
       <div>
@@ -334,7 +334,7 @@ export const TicketBookingWizard: React.FC = () => {
           </div>
 
           {/* Step 3: Quantity Selector */}
-          <div className="glass-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-black/10 dark:border-white/10 shadow-sm dark:shadow-tactile">
+          <div className="glass-card p-4 sm:p-5 flex items-center justify-between border border-black/10 dark:border-white/10 shadow-sm dark:shadow-tactile">
             <div>
               <div className="font-bebas text-base sm:text-lg text-[var(--kreeda-text-primary)] tracking-wider uppercase">
                 3. Number of Tickets
@@ -342,13 +342,13 @@ export const TicketBookingWizard: React.FC = () => {
               <div className="text-[11px] text-[var(--kreeda-text-muted)]">Max 6 tickets per transaction</div>
             </div>
 
-            <div className="flex items-center justify-between sm:justify-start gap-1.5 sm:gap-2 w-full sm:w-auto">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               {[1, 2, 3, 4, 5, 6].map((num) => (
                 <button
                   key={num}
                   type="button"
                   onClick={() => setQuantity(num)}
-                  className={`flex-1 sm:flex-none w-auto sm:w-10 h-10 rounded-xl font-bold text-sm transition border btn-tactile ${
+                  className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl font-bold text-sm transition border btn-tactile ${
                     quantity === num
                       ? 'bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white border-transparent shadow-orange-glow font-black'
                       : 'bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] hover:bg-black/10'

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { InfluencerApplication, StateType } from '../../types';
 import confetti from 'canvas-confetti';
-import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Flame, 
   CheckCircle2, 
@@ -69,7 +68,7 @@ export const InfluencerRegistrationWizard: React.FC = () => {
 
   if (submittedApp) {
     return (
-      <div className="w-full pt-3 sm:pt-5 pb-12 px-4 sm:px-8 max-w-3xl mx-auto">
+      <div className="w-full py-12 px-4 sm:px-8 max-w-3xl mx-auto">
         <div className="glass-card p-8 border-2 border-black/10 dark:border-white/15 relative overflow-hidden space-y-6 shadow-xl">
           <div className="text-center space-y-2">
             <div className="w-16 h-16 rounded-2xl bg-[#FF5500]/15 border border-[#FF5500]/30 text-[#FF5500] flex items-center justify-center mx-auto shadow-sm">
@@ -129,7 +128,7 @@ export const InfluencerRegistrationWizard: React.FC = () => {
   }
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 max-w-4xl mx-auto space-y-6 sm:space-y-8">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 max-w-4xl mx-auto">
       <div className="glass-card p-6 sm:p-10 space-y-8 border-2 border-black/10 dark:border-white/15 shadow-xl">
         
         {/* Header */}
@@ -149,7 +148,7 @@ export const InfluencerRegistrationWizard: React.FC = () => {
 
           {/* Kreeda VIP Pass Badge Thumbnail */}
           <div className="w-16 h-16 rounded-2xl overflow-hidden border border-[#F59E0B]/40 shadow-sm flex-shrink-0 hidden sm:block">
-            <img src={getAssetUrl('assets/kreeda/kreeda_vip_pass_badge.jpg')} alt="VIP Pass" className="w-full h-full object-cover" />
+            <img src="/assets/kreeda/kreeda_vip_pass_badge.jpg" alt="VIP Pass" className="w-full h-full object-cover" />
           </div>
         </div>
 

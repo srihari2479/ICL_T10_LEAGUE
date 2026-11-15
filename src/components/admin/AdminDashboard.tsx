@@ -54,7 +54,7 @@ export const AdminDashboard: React.FC = () => {
   const totalTicketRevenue = ticketBookings.reduce((sum, b) => sum + b.totalAmount, 0);
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-6 sm:space-y-8">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
       
       {/* Top Header & Role Switcher */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-5 border-b border-black/10 dark:border-white/10">

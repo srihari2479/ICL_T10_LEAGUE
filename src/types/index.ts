@@ -164,9 +164,6 @@ export interface Partner {
   logoUrl?: string;
   logoDarkUrl?: string;
   website: string;
-  categoryScope?: string;
-  brandColor?: string;
-  accentGradient?: string;
 }
 
 export interface FAQ {

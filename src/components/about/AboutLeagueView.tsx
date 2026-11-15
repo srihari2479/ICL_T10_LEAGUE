@@ -1,6 +1,5 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { getAssetUrl } from '../../utils/assetHelper';
 import { 
   Trophy, 
   ShieldCheck, 
@@ -27,7 +26,7 @@ export const AboutLeagueView: React.FC = () => {
   ];
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-10 sm:space-y-12">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-12">
       
       {/* Header with 3D Trophy Banner */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -47,7 +46,7 @@ export const AboutLeagueView: React.FC = () => {
         <div className="lg:col-span-4 flex justify-center">
           <div className="w-64 h-64 rounded-3xl overflow-hidden border-2 border-black/10 dark:border-white/15 shadow-sm dark:shadow-orange-glow bg-[var(--kreeda-surface-elevated)] p-4 flex items-center justify-center relative group">
             <img 
-              src={getAssetUrl('assets/trophy.png?v=4')} 
+              src="/assets/trophy.png?v=4" 
               alt="ICL T10 Official Championship Silverware" 
               className="h-full object-contain filter drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
             />
@@ -117,7 +116,7 @@ export const AboutLeagueView: React.FC = () => {
       </div>
 
       {/* Kreeda App Technical Boundary Card */}
-      <div className="glass-card p-5 sm:p-8 rounded-3xl border-2 border-black/10 dark:border-white/10 space-y-4 shadow-xl">
+      <div className="glass-card p-8 border-2 border-black/10 dark:border-white/10 space-y-4 shadow-xl">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
           <div className="space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#FF5500]">
@@ -133,7 +132,7 @@ export const AboutLeagueView: React.FC = () => {
 
           <button
             onClick={() => openKreedaBoundaryModal()}
-            className="w-full sm:w-auto py-2.5 sm:py-3 px-5 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition flex-shrink-0 shadow-orange-glow btn-tactile"
+            className="py-2.5 sm:py-3 px-5 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 transition self-start sm:self-auto flex-shrink-0 shadow-orange-glow btn-tactile"
           >
             <span>Read Architecture Boundary</span>
             <ExternalLink className="w-4 h-4 text-white" />
@@ -142,17 +141,17 @@ export const AboutLeagueView: React.FC = () => {
       </div>
 
       {/* Quick Action Footer */}
-      <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+      <div className="pt-2 flex flex-wrap items-center gap-4">
         <button
           onClick={() => setCurrentPage('register-player')}
-          className="w-full sm:w-auto py-3.5 px-7 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-lg tracking-wider uppercase font-black transition shadow-orange-glow btn-tactile text-center"
+          className="py-3.5 px-7 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bebas text-lg tracking-wider uppercase font-black transition shadow-orange-glow btn-tactile"
         >
           Enroll for Player Trials
         </button>
 
         <button
           onClick={() => setCurrentPage('zones')}
-          className="w-full sm:w-auto py-3.5 px-6 rounded-2xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-[var(--kreeda-text-primary)] font-bold text-sm border border-black/10 dark:border-white/10 transition btn-tactile text-center"
+          className="py-3.5 px-6 rounded-2xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-[var(--kreeda-text-primary)] font-bold text-sm border border-black/10 dark:border-white/10 transition btn-tactile"
         >
           Explore Catchment Map
         </button>

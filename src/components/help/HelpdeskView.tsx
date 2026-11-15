@@ -41,7 +41,7 @@ export const HelpdeskView: React.FC = () => {
   };
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8 sm:space-y-10">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-10">
       
       {/* Header */}
       <div>

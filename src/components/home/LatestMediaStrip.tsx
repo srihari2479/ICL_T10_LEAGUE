@@ -2,7 +2,6 @@ import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { NEWS_DATA } from '../../data/mediaData';
 import { Newspaper, ChevronRight, Clock, User } from 'lucide-react';
-import { getAssetUrl } from '../../utils/assetHelper';
 
 export const LatestMediaStrip: React.FC = () => {
   const { setCurrentPage } = useApp();
@@ -49,7 +48,7 @@ export const LatestMediaStrip: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = getAssetUrl('assets/media_season1_launch.jpg');
+                    e.currentTarget.src = '/assets/media_season1_launch.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />

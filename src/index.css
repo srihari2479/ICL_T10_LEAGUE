@@ -187,6 +187,53 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  /* Trophy ₹1 Crore Floating Badge Glowing & Light Blink Keyframe */
+  @keyframes trophyBorderPulse {
+    0%, 100% {
+      border-color: rgba(245, 158, 11, 0.7);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.45), 0 0 30px rgba(255, 85, 0, 0.25), inset 0 0 8px rgba(245, 158, 11, 0.2);
+    }
+    50% {
+      border-color: rgba(253, 224, 71, 1);
+      box-shadow: 0 0 28px rgba(251, 191, 36, 0.9), 0 0 50px rgba(255, 85, 0, 0.5), inset 0 0 14px rgba(245, 158, 11, 0.45);
+    }
+  }
+
+  @keyframes lightShimmerSweep {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateX(250%) skewX(-20deg);
+      opacity: 0;
+    }
+  }
+
+  .trophy-badge-glow {
+    animation: trophyBorderPulse 2.2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trophy-badge-glow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    animation: lightShimmerSweep 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    pointer-events: none;
+  }
 }
 
 /* ==========================================================================

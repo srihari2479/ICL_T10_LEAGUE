@@ -7,7 +7,7 @@ export const QuickStats: React.FC = () => {
     { label: 'Telugu States', value: '2', icon: Map, color: 'text-[#F59E0B]', bg: 'bg-[#F59E0B]/10', border: 'border-[#F59E0B]/30', sub: 'Andhra & Telangana' },
     { label: 'Catchment Districts', value: '45+', icon: Users, color: 'text-[#FF661A]', bg: 'bg-[#FF661A]/10', border: 'border-[#FF661A]/30', sub: '100% Talent Mapping' },
     { label: 'Balls Per Innings', value: '60', icon: Timer, color: 'text-[var(--kreeda-text-primary)]', bg: 'bg-black/5 dark:bg-white/10', border: 'border-black/10 dark:border-white/20', sub: '10 High-Octane Overs' },
-    { label: 'Championship Trophy', value: '1', icon: Trophy, color: 'text-[#F59E0B]', bg: 'bg-[#F59E0B]/10', border: 'border-[#F59E0B]/30', sub: 'Silverware of Pride' },
+    { label: 'Total Prize Pool', value: '₹1 Cr', icon: Trophy, color: 'text-[#F59E0B]', bg: 'bg-[#F59E0B]/15', border: 'border-[#F59E0B]/40', sub: 'First in AP & TG' },
   ];
 
   return (

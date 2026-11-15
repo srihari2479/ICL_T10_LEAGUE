@@ -144,7 +144,7 @@ export const PlayerRegistrationWizard: React.FC = () => {
 
   if (submittedApp) {
     return (
-      <div className="w-full pt-3 sm:pt-5 pb-12 px-4 sm:px-8 max-w-3xl mx-auto">
+      <div className="w-full py-12 px-4 sm:px-8 max-w-3xl mx-auto">
         <div className="glass-card p-8 border-2 border-emerald-500/50 relative overflow-hidden space-y-6 shadow-2xl">
           <div className="text-center space-y-2">
             <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
@@ -231,7 +231,7 @@ export const PlayerRegistrationWizard: React.FC = () => {
   }
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 max-w-4xl mx-auto space-y-6 sm:space-y-8">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 max-w-4xl mx-auto">
       <div className="glass-card p-6 sm:p-10 space-y-8 border-2 border-[#FF5500]/25 shadow-2xl">
         
         {/* Header */}
@@ -283,24 +283,22 @@ export const PlayerRegistrationWizard: React.FC = () => {
                 <label className="block text-sm font-bold text-[var(--kreeda-text-primary)] mb-2">
                   Mobile Number (10 Digits) *
                 </label>
-                <div className="flex flex-col sm:flex-row gap-2.5">
-                  <div className="flex gap-2 flex-1 min-w-0">
-                    <div className="flex items-center px-3.5 sm:px-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-sm font-bold text-[var(--kreeda-text-secondary)] flex-shrink-0">
-                      +91
-                    </div>
-                    <input
-                      type="tel"
-                      maxLength={10}
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
-                      placeholder="98490 12345"
-                      className="w-full min-w-0 px-4 py-3 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm sm:text-base focus:outline-none focus:border-[#FF5500]"
-                    />
+                <div className="flex gap-2.5">
+                  <div className="flex items-center px-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-sm font-bold text-[var(--kreeda-text-secondary)]">
+                    +91
                   </div>
+                  <input
+                    type="tel"
+                    maxLength={10}
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
+                    placeholder="98490 12345"
+                    className="flex-1 px-4 py-3 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[var(--kreeda-text-primary)] placeholder-[var(--kreeda-text-muted)] text-sm sm:text-base focus:outline-none focus:border-[#FF5500]"
+                  />
                   <button
                     type="button"
                     onClick={handleSendOtp}
-                    className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] text-[#070B14] font-bebas text-base uppercase tracking-wider font-black transition btn-tactile shadow-orange-glow whitespace-nowrap"
+                    className="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#FF5500] to-[#F59E0B] text-[#070B14] font-bebas text-base uppercase tracking-wider font-black transition btn-tactile shadow-orange-glow"
                   >
                     {otpSent ? 'Resend' : 'Send OTP'}
                   </button>

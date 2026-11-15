@@ -73,7 +73,7 @@ export const ApplicationTracker: React.FC = () => {
   };
 
   return (
-    <div className="w-full pt-3 sm:pt-5 pb-10 sm:pb-14 px-4 sm:px-8 max-w-4xl mx-auto space-y-6 sm:space-y-8">
+    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 max-w-4xl mx-auto space-y-8">
       
       {/* Search Header */}
       <div className="glass-card p-6 sm:p-8 space-y-4 border-2 border-[#FF5500]/25 shadow-2xl">
