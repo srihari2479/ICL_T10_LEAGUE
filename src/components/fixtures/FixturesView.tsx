@@ -18,7 +18,7 @@ export const FixturesView: React.FC = () => {
   });
 
   return (
-    <div className="w-full py-10 sm:py-14 px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
+    <div className="w-full py-6 sm:py-14 px-2.5 xs:px-4 sm:px-8 lg:px-12 xl:px-16 space-y-6 sm:space-y-8 pb-8 sm:pb-12">
       
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-5">
@@ -96,38 +96,38 @@ export const FixturesView: React.FC = () => {
           return (
             <div
               key={match.id}
-              className={`glass-card p-5 sm:p-6 flex flex-col justify-between border-2 transition-all duration-300 shadow-sm dark:shadow-tactile ${
+              className={`glass-card p-3.5 xs:p-4 sm:p-6 flex flex-col justify-between border-2 transition-all duration-300 shadow-sm dark:shadow-tactile ${
                 isLive 
                   ? 'border-rose-500/50 bg-rose-500/5 dark:bg-rose-950/20 shadow-md' 
                   : 'border-black/10 dark:border-white/10 hover:border-[#FF5500]/40'
               }`}
             >
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 
                 {/* Header Row */}
-                <div className="flex items-center justify-between pb-3 border-b border-black/10 dark:border-white/10 text-xs">
-                  <span className="font-bold uppercase tracking-wider text-[var(--kreeda-text-muted)]">
+                <div className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/10 dark:border-white/10 text-xs">
+                  <span className="font-bold uppercase tracking-wider text-[var(--kreeda-text-muted)] text-[11px] xs:text-xs">
                     {match.stage} • Match #{match.matchNo}
                   </span>
 
                   {isLive ? (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-600 dark:text-rose-400 font-extrabold text-[11px] tracking-wider uppercase animate-pulse">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-600 dark:text-rose-400 font-extrabold text-[10px] xs:text-[11px] tracking-wider uppercase animate-pulse">
                       <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
                       LIVE
                     </span>
                   ) : (
-                    <span className="text-[var(--kreeda-text-secondary)] font-semibold">
+                    <span className="text-[var(--kreeda-text-secondary)] font-semibold text-[11px] xs:text-xs">
                       {match.date} • {match.time}
                     </span>
                   )}
                 </div>
 
-                {/* Teams Row (Symmetric Pro Scoreboard Layout) */}
-                <div className="py-2 grid grid-cols-12 items-center gap-2">
+                {/* Teams Row (Symmetric Pro Scoreboard Layout, Stacked on Mobile to prevent Truncation) */}
+                <div className="py-2.5 grid grid-cols-12 items-center gap-1.5 xs:gap-2">
                   
                   {/* Team 1 */}
-                  <div className="col-span-4 sm:col-span-5 flex items-center gap-2.5 min-w-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
+                  <div className="col-span-4 sm:col-span-5 flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 min-w-0 text-center sm:text-left">
+                    <div className="w-10 h-10 xs:w-11 xs:h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
                       {team1?.crestImage ? (
                         <img src={team1.crestImage} alt={team1.name} className="w-full h-full object-cover" />
                       ) : (
@@ -136,45 +136,37 @@ export const FixturesView: React.FC = () => {
                         </div>
                       )}
                     </div>
-                    <div className="min-w-0">
-                      <div className="font-bold text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-snug line-clamp-1">
+                    <div className="min-w-0 w-full sm:w-auto">
+                      <div className="font-bold text-[11px] xs:text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-tight line-clamp-2 sm:line-clamp-1">
                         {team1?.name}
                       </div>
-                      <div className="text-[11px] text-[var(--kreeda-text-muted)] truncate">
+                      <div className="text-[10px] xs:text-[11px] text-[var(--kreeda-text-muted)] truncate hidden xs:block">
                         {team1?.hub}
                       </div>
                     </div>
                   </div>
 
                   {/* Center Score / VS Indicator */}
-                  <div className="col-span-4 sm:col-span-2 text-center flex flex-col items-center justify-center">
+                  <div className="col-span-4 sm:col-span-2 text-center flex flex-col items-center justify-center px-1">
                     {isLive && match.team1Score && match.team2Score ? (
                       <div className="space-y-0.5">
-                        <div className="font-bebas text-base sm:text-xl tracking-wider text-[#FF5500] leading-none whitespace-nowrap">
-                          {match.team1Score.split(' ')[0]} <span className="text-[var(--kreeda-text-muted)] text-xs font-sans font-normal">vs</span> {match.team2Score.split(' ')[0]}
+                        <div className="font-bebas text-sm xs:text-base sm:text-xl tracking-wider text-[#FF5500] leading-none whitespace-nowrap">
+                          {match.team1Score.split(' ')[0]} <span className="text-[var(--kreeda-text-muted)] text-[10px] xs:text-xs font-sans font-normal">vs</span> {match.team2Score.split(' ')[0]}
                         </div>
-                        <div className="text-[10px] text-[var(--kreeda-text-muted)] font-mono">
+                        <div className="text-[9px] xs:text-[10px] text-[var(--kreeda-text-muted)] font-mono">
                           {match.team1Score.split(' ')[1] || ''} • {match.team2Score.split(' ')[1] || ''}
                         </div>
                       </div>
                     ) : (
-                      <span className="w-7 h-7 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center text-[10px] font-black text-[#FF5500] shadow-sm">
+                      <span className="w-6 h-6 xs:w-7 xs:h-7 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center text-[9px] xs:text-[10px] font-black text-[#FF5500] shadow-sm">
                         VS
                       </span>
                     )}
                   </div>
 
                   {/* Team 2 */}
-                  <div className="col-span-4 sm:col-span-5 flex items-center justify-end gap-2.5 min-w-0 text-right">
-                    <div className="min-w-0">
-                      <div className="font-bold text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-snug line-clamp-1">
-                        {team2?.name}
-                      </div>
-                      <div className="text-[11px] text-[var(--kreeda-text-muted)] truncate">
-                        {team2?.hub}
-                      </div>
-                    </div>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
+                  <div className="col-span-4 sm:col-span-5 flex flex-col sm:flex-row-reverse items-center gap-1.5 sm:gap-2.5 min-w-0 text-center sm:text-right">
+                    <div className="w-10 h-10 xs:w-11 xs:h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-sm bg-[var(--kreeda-surface-elevated)] flex-shrink-0">
                       {team2?.crestImage ? (
                         <img src={team2.crestImage} alt={team2.name} className="w-full h-full object-cover" />
                       ) : (
@@ -182,6 +174,14 @@ export const FixturesView: React.FC = () => {
                           {team2?.shortCode}
                         </div>
                       )}
+                    </div>
+                    <div className="min-w-0 w-full sm:w-auto">
+                      <div className="font-bold text-[11px] xs:text-xs sm:text-sm text-[var(--kreeda-text-primary)] leading-tight line-clamp-2 sm:line-clamp-1">
+                        {team2?.name}
+                      </div>
+                      <div className="text-[10px] xs:text-[11px] text-[var(--kreeda-text-muted)] truncate hidden xs:block">
+                        {team2?.hub}
+                      </div>
                     </div>
                   </div>
                 </div>
