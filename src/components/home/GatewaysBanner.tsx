@@ -33,19 +33,8 @@ export const GatewaysBanner: React.FC = () => {
             <div className="space-y-3.5 sm:space-y-4 relative z-10">
               
               {/* Header with 3D Equipment Showcase */}
-              <div className="relative">
-                {/* 3D Equipment Asset Positioned Gracefully */}
-                <div className="absolute -top-1 -right-1 sm:-top-2 sm:right-0 pointer-events-none z-0">
-                  <div className="absolute inset-0 bg-[#FF5500]/15 rounded-full blur-xl scale-75" />
-                  <img 
-                    src="/assets/player_trials_3d.png" 
-                    alt="Official Player Cricket Equipment" 
-                    className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain filter drop-shadow-[0_10px_20px_rgba(255,85,0,0.25)] group-hover:scale-105 transition-transform duration-300" 
-                  />
-                </div>
-
-                {/* Left Text Column with Safe Right Padding on Mobile */}
-                <div className="pr-20 sm:pr-28 md:pr-36 relative z-10 space-y-2">
+              <div className="flex items-start justify-between gap-3 sm:gap-4">
+                <div className="space-y-2 flex-1 min-w-0">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FF5500]/15 border border-[#FF5500]/30 text-[#FF5500]">
                     <UserPlus className="w-3.5 h-3.5 flex-shrink-0" />
                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">
@@ -56,6 +45,15 @@ export const GatewaysBanner: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bebas text-[var(--kreeda-text-primary)] tracking-wide leading-tight">
                     PLAYER REGISTRATION &amp; OPEN TRIALS
                   </h3>
+                </div>
+
+                <div className="flex-shrink-0 relative -mt-1 sm:-mt-2">
+                  <div className="absolute inset-0 bg-[#FF5500]/15 rounded-full blur-xl scale-75 pointer-events-none" />
+                  <img 
+                    src="/assets/player_trials_3d.png" 
+                    alt="Official Player Cricket Equipment" 
+                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain filter drop-shadow-[0_10px_20px_rgba(255,85,0,0.25)] group-hover:scale-105 transition-transform duration-300 relative z-10" 
+                  />
                 </div>
               </div>
 
@@ -103,19 +101,8 @@ export const GatewaysBanner: React.FC = () => {
             <div className="space-y-3.5 sm:space-y-4 relative z-10">
               
               {/* Header with 3D Media Gear Showcase */}
-              <div className="relative">
-                {/* 3D VIP Media Rig Asset Positioned Gracefully */}
-                <div className="absolute -top-1 -right-1 sm:-top-2 sm:right-0 pointer-events-none z-0">
-                  <div className="absolute inset-0 bg-[#F59E0B]/15 rounded-full blur-xl scale-75" />
-                  <img 
-                    src="/assets/creator_vip_3d.png" 
-                    alt="Official VIP Media Creator Equipment" 
-                    className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain filter drop-shadow-[0_10px_20px_rgba(245,158,11,0.25)] group-hover:scale-105 transition-transform duration-300" 
-                  />
-                </div>
-
-                {/* Left Text Column with Safe Right Padding on Mobile */}
-                <div className="pr-20 sm:pr-28 md:pr-36 relative z-10 space-y-2">
+              <div className="flex items-start justify-between gap-3 sm:gap-4">
+                <div className="space-y-2 flex-1 min-w-0">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F59E0B]/15 border border-[#F59E0B]/30 text-[#F59E0B]">
                     <Flame className="w-3.5 h-3.5 flex-shrink-0" />
                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">
@@ -126,6 +113,15 @@ export const GatewaysBanner: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bebas text-[var(--kreeda-text-primary)] tracking-wide leading-tight">
                     INFLUENCER &amp; CREATOR PORTAL
                   </h3>
+                </div>
+
+                <div className="flex-shrink-0 relative -mt-1 sm:-mt-2">
+                  <div className="absolute inset-0 bg-[#F59E0B]/15 rounded-full blur-xl scale-75 pointer-events-none" />
+                  <img 
+                    src="/assets/creator_vip_3d.png" 
+                    alt="Official VIP Media Creator Equipment" 
+                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain filter drop-shadow-[0_10px_20px_rgba(245,158,11,0.25)] group-hover:scale-105 transition-transform duration-300 relative z-10" 
+                  />
                 </div>
               </div>
 

@@ -86,32 +86,32 @@ export const HeroSection: React.FC = () => {
               </p>
             </div>
 
-            {/* High Impact Primary Actions (Mobile-Optimized Grid) */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2 sm:gap-3.5 pt-1 w-full max-w-md mx-auto lg:mx-0">
+            {/* High Impact Primary Actions (Mobile-Optimized Grid, Desktop-Unified Single Line) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-1 w-full max-w-md lg:max-w-none mx-auto lg:mx-0">
               <Link
                 to="/register-player"
-                className="py-2.5 sm:py-3 px-6 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-orange-glow btn-tactile border border-white/20"
+                className="h-11 sm:h-12 px-5 sm:px-6 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#FF661A] hover:brightness-110 text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-orange-glow btn-tactile border border-white/20 whitespace-nowrap flex-shrink-0"
               >
-                <UserPlus className="w-4 h-4 text-white" />
-                <span>Register for Trials</span>
+                <UserPlus className="w-4 h-4 text-white flex-shrink-0" />
+                <span className="whitespace-nowrap">Register for Trials</span>
               </Link>
 
-              <div className="grid grid-cols-2 gap-2 w-full sm:flex sm:w-auto">
+              <div className="grid grid-cols-2 gap-2 w-full sm:flex sm:w-auto sm:items-center sm:gap-3 flex-shrink-0">
                 <Link
                   to="/tickets"
-                  className="py-2 sm:py-3 px-3 sm:px-5 rounded-xl bg-black/40 hover:bg-black/60 backdrop-blur-xl border border-white/25 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-lg btn-tactile transition-all"
+                  className="h-11 sm:h-12 px-4 sm:px-5 rounded-xl bg-black/40 hover:bg-black/60 backdrop-blur-xl border border-white/25 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-lg btn-tactile transition-all whitespace-nowrap"
                 >
-                  <Ticket className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500]" />
-                  <span>Tickets</span>
+                  <Ticket className="w-4 h-4 text-[#FF5500] flex-shrink-0" />
+                  <span className="whitespace-nowrap">Tickets</span>
                 </Link>
 
                 <Link
                   to="/districts"
-                  className="py-2 sm:py-3 px-3 sm:px-5 rounded-xl bg-black/30 hover:bg-[#FF5500]/20 backdrop-blur-md border border-[#FF5500]/40 text-[#FFCD80] font-bold text-xs sm:text-sm flex items-center justify-center gap-1 transition btn-tactile whitespace-nowrap"
+                  className="h-11 sm:h-12 px-4 sm:px-5 rounded-xl bg-black/30 hover:bg-[#FF5500]/20 backdrop-blur-md border border-[#FF5500]/40 text-[#FFCD80] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition btn-tactile whitespace-nowrap"
                 >
-                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500]" />
-                  <span>My District</span>
-                  <ChevronRight className="w-3 h-3 text-[#FF5500]" />
+                  <MapPin className="w-4 h-4 text-[#FF5500] flex-shrink-0" />
+                  <span className="whitespace-nowrap">My District</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#FF5500] flex-shrink-0" />
                 </Link>
               </div>
             </div>
